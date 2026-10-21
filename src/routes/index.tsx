@@ -20,8 +20,8 @@ const MAIL = "mailto:hello@example.com";
 const CV = "#";
 
 const work = [
-  { y: "2024-2026", t: "Старший графический дизайнер", c: "Esteem.pro" },
-  { y: "2023-2026", t: "Фриланс", c: "проекты" },
+  { y: "2024-2026", t: "Старший графический дизайнер Esteem.pro" },
+  { y: "2023-2026", t: "Фриланс проекты" },
 ];
 const edu = [
   { t: "Диплом художественной школы" },
@@ -86,22 +86,19 @@ function Index() {
 
       <section id="experience" className="scroll-mt-20 border-b">
         <Title>Опыт и бэкграунд</Title>
-        <div className="grid md:grid-cols-2">
-          <ul className="list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:py-24 md:last:border-r-0">
+        <div className="grid gap-12 p-6 py-16 md:grid-cols-2 md:gap-16 md:p-16 md:py-24">
+          <ul className="max-w-md space-y-8">
             {work.map((e) => (
-              <li key={e.y + e.t} className="flex min-h-24 items-center gap-x-6 border-b py-6 last:border-b-0 md:min-h-28">
-                <span className="w-24 shrink-0 font-mono text-sm text-secondary">{e.y}</span>
-                <span className="text-lg font-semibold md:text-xl">
-                  {e.t}
-                  {e.c && <span className="font-normal text-muted-foreground"> {e.c}</span>}
-                </span>
+              <li key={e.y} className="border-l-2 border-primary pl-6">
+                <span className="font-mono text-xl font-medium text-primary md:text-2xl">{e.y}</span>
+                <p className="mt-2 text-base md:text-lg">{e.t}</p>
               </li>
             ))}
           </ul>
-          <ul className="list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:p-16 md:py-24">
+          <ul className="max-w-md space-y-8">
             {edu.map((e) => (
-              <li key={e.t} className="flex min-h-24 items-center border-b py-6 last:border-b-0 md:min-h-28">
-                <span className="text-lg font-semibold md:text-xl">{e.t}</span>
+              <li key={e.t} className="border-l-2 border-primary pl-6">
+                <p className="text-base md:text-lg">{e.t}</p>
               </li>
             ))}
           </ul>
