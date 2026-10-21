@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import i00 from "@/assets/relumo/relumo-00.jpg.asset.json";
 import sign from "@/assets/relumo/relumo-sign.jpg.asset.json";
 import vertical from "@/assets/relumo/relumo-vertical.jpg.asset.json";
 import horizontal from "@/assets/relumo/relumo-horizontal.jpg.asset.json";
-import i01 from "@/assets/relumo/relumo-01.jpg.asset.json";
 import i02 from "@/assets/relumo/relumo-02.jpg.asset.json";
 import i03 from "@/assets/relumo/relumo-03.jpg.asset.json";
 import i07 from "@/assets/relumo/relumo-07.jpg.asset.json";
@@ -46,16 +44,17 @@ function Img({ src, alt, className = "" }: { src: string; alt: string; className
   );
 }
 
-function H2({ n, children }: { n: string; children: string }) {
-  return (
-    <div className="flex items-baseline gap-4">
-      <span className="font-mono text-sm text-primary">[{n}]</span>
-      <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>
-    </div>
-  );
+function H2({ children }: { children: string }) {
+  return <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>;
 }
 
 const P = "text-lg md:text-xl";
+// Общая сетка секций: заголовок сверху, ниже — текст и фото на одной колонночной сетке.
+const ROW = "mt-12 grid items-center gap-10 md:gap-16";
+const TEXT_LEFT = `${ROW} md:grid-cols-[1fr_1.4fr]`;
+const IMG_LEFT = `${ROW} md:grid-cols-[1.4fr_1fr]`;
+const PHOTO = "aspect-[1.42/1]";
+const WIDE = "aspect-[16/9]";
 
 function Relumo() {
   return (
@@ -80,63 +79,67 @@ function Relumo() {
       </section>
 
       <section className="border-b p-6 md:p-16">
-        <Img src={i07.url} alt="Логотип Relumo, подсвеченный на тёмно-синем фоне" className="aspect-[16/10] shadow-brutal" />
+        <Img src={i07.url} alt="Логотип Relumo, подсвеченный на тёмно-синем фоне" className={`${WIDE} shadow-brutal`} />
       </section>
 
       <section className="border-b p-6 py-16 md:p-16 md:py-24">
-        <H2 n="01">Контекст и бизнес-задача</H2>
-        <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">
+        <H2>Контекст и бизнес-задача</H2>
+        <div className={TEXT_LEFT}>
           <div className="space-y-6">
             <p className="font-mono text-sm uppercase text-muted-foreground">Исходная ситуация</p>
             <p className={P}>Финский стартап в сфере светодизайна выходил на международный B2B-рынок. Изначальный запрос клиента звучал как «создать пластичный логотип и подобрать фирменные цвета».</p>
             <p className="pt-6 font-mono text-sm uppercase text-muted-foreground">Точки боли</p>
             <p className={P}>В ходе брифинга я выявила ключевое бизнес-требование: бренд строится на перспективу. Через 5 лет компания планирует масштабироваться и, возможно, выйти за пределы только светодизайна.</p>
           </div>
-          <ul className="space-y-8">
-            <li className="border p-8"><b className="font-display">Проблема 1:</b> <span className={P}>Нужен аутентичный знак, который транслирует идею «света» сейчас, но не потеряет актуальности при смене ниши (никаких прямых ассоциаций в лоб, вроде лампочек или лучей).</span></li>
-            <li className="border p-8"><b className="font-display">Проблема 2:</b> <span className={P}>Проект стартует с нуля. Делать просто логотип — нерентабельно для бизнеса. Чтобы сразу занять премиум-позиционирование и отстроиться от конкурентов, стартапу требовалась полноценная, масштабируемая визуальная система.</span></li>
-          </ul>
-        </div>
-      </section>
-
-      <section className="grid border-b md:grid-cols-2">
-        <div className="space-y-6 border-b p-6 py-16 md:border-b-0 md:border-r md:p-16 md:py-24">
-          <H2 n="02">Исследование ниши и поиск метафоры</H2>
-          <p className={`${P} pt-6`}>Аудит европейских и российских конкурентов показал две полярные и одинаково неэффективные стратегии:</p>
-          <ol className={`${P} list-decimal space-y-3 pl-6`}>
-            <li>Ультра-примитивность: незатейливая графика «для галочки» с фокусом только на продукт, бренд выглядит дешево.</li>
-            <li>Гипер-абстракция: сложная, глубокая графика, которая абсолютно не запоминается и не идентифицируется при повторном касании.</li>
-          </ol>
-          <p className="pt-6 font-mono text-sm uppercase text-muted-foreground">Поиск метафоры</p>
-          <p className={P}>За основу я взяла философский смысл слова «Relumo» — нести свет, улучшать, реконструировать среду и жизнь бизнеса. Отбросив банальные идеи со звездами и искрами, я пришла к метафоре Призмы. Призма не говорит о свете «в лоб», но она его преломляет, концентрирует и направляет. Это идеальный баланс между сложной абстракцией и понятным, запоминающимся образом, который легко считывается аудиторией (тестирование на фокус-группе из 30 человек вне индустрии показало 90% считываемости идеи).</p>
-        </div>
-        <div className="flex flex-col gap-8 p-6 md:p-16">
-          <Img src={i16.url} alt="Мудборд логотипов конкурентов: FLOS, ERCO, Targetti, iGuzzini, Zumtobel" />
-          <Img src={i10.url} alt="Знак-призма, спроецированный светом на стену" className="aspect-[4/3]" />
+          <div className="grid gap-6">
+            <div className="border p-8"><b className="font-display">Проблема 1:</b> <span className={P}>Нужен аутентичный знак, который транслирует идею «света» сейчас, но не потеряет актуальности при смене ниши (никаких прямых ассоциаций в лоб, вроде лампочек или лучей).</span></div>
+            <div className="border p-8"><b className="font-display">Проблема 2:</b> <span className={P}>Проект стартует с нуля. Делать просто логотип — нерентабельно для бизнеса. Чтобы сразу занять премиум-позиционирование и отстроиться от конкурентов, стартапу требовалась полноценная, масштабируемая визуальная система.</span></div>
+          </div>
         </div>
       </section>
 
       <section className="border-b p-6 py-16 md:p-16 md:py-24">
-        <H2 n="03">Архитектура дизайн-системы</H2>
-        <div className="mt-16 space-y-32">
-          {/* 1. Геометрия знака: большая картинка + карточки-смыслы */}
+        <H2>Исследование ниши</H2>
+        <div className={TEXT_LEFT}>
+          <div className="space-y-6">
+            <p className={P}>Аудит европейских и российских конкурентов показал две полярные и одинаково неэффективные стратегии:</p>
+            <ol className={`${P} list-decimal space-y-3 pl-6`}>
+              <li>Ультра-примитивность: незатейливая графика «для галочки» с фокусом только на продукт, бренд выглядит дешево.</li>
+              <li>Гипер-абстракция: сложная, глубокая графика, которая абсолютно не запоминается и не идентифицируется при повторном касании.</li>
+            </ol>
+          </div>
+          <Img src={i16.url} alt="Мудборд логотипов конкурентов: FLOS, ERCO, Targetti, iGuzzini, Zumtobel" className={WIDE} />
+        </div>
+      </section>
+
+      <section className="border-b p-6 py-16 md:p-16 md:py-24">
+        <H2>Поиск метафоры</H2>
+        <div className={IMG_LEFT}>
+          <Img src={i10.url} alt="Знак-призма, спроецированный светом на стену" className={PHOTO} />
+          <p className={`${P} text-muted-foreground`}>За основу я взяла философский смысл слова «Relumo» — нести свет, улучшать, реконструировать среду и жизнь бизнеса. Отбросив банальные идеи со звездами и искрами, я пришла к метафоре Призмы. Призма не говорит о свете «в лоб», но она его преломляет, концентрирует и направляет. Это идеальный баланс между сложной абстракцией и понятным, запоминающимся образом, который легко считывается аудиторией (тестирование на фокус-группе из 30 человек вне индустрии показало 90% считываемости идеи).</p>
+        </div>
+      </section>
+
+      <section className="border-b p-6 py-16 md:p-16 md:py-24">
+        <H2>Архитектура дизайн-системы</H2>
+        <div className="mt-16 space-y-24">
+          {/* 1. Геометрия знака: большое фото + карточки-смыслы */}
           <div>
             <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
               <h3 className="text-2xl font-bold md:text-3xl">Геометрия знака</h3>
               <p className={`${P} text-muted-foreground`}>Основа знака — треугольник (призма). Он символизирует три столпа светодизайна: две нижние вершины стремятся вверх и соединяются в высшей точке.</p>
             </div>
-            <div className="mt-12 grid gap-6 md:grid-cols-[1.4fr_1fr]">
-              <Img src={i02.url} alt="Знак Relumo на синем фоне, вписанный в треугольник" className="aspect-[4/3] md:aspect-auto md:min-h-full" />
+            <div className={IMG_LEFT}>
+              <Img src={i02.url} alt="Знак Relumo на синем фоне, вписанный в треугольник" className={PHOTO} />
               <div className="grid gap-6">
                 {[
                   ["Вершина — человек", "Тот, ради которого создаётся световой сценарий."],
                   ["Основание — архитектура", "Физическая среда и интерьер, с которыми работает студия."],
                   ["Срез — луч света", "Свет поступает в призму, преломляется и отражается от её граней."],
                   ["Буква «L»", "Тот же луч дублируется в названии и выведен выше набора — лёгкая «панковость» разбивает строгость B2B-шрифта."],
-                ].map(([t, d], k) => (
+                ].map(([t, d]) => (
                   <div key={t} className="border p-6 transition-colors duration-150 hover:border-primary">
-                    <p className="font-mono text-xs text-primary">0{k + 1}</p>
-                    <p className="mt-2 font-display text-lg font-bold">{t}</p>
+                    <p className="font-display text-lg font-bold">{t}</p>
                     <p className="mt-2 text-muted-foreground">{d}</p>
                   </div>
                 ))}
@@ -144,20 +147,20 @@ function Relumo() {
             </div>
           </div>
 
-          {/* 2. Три начертания */}
+          {/* 2. Три начертания: три фото в ряд */}
           <div>
             <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
               <h3 className="text-2xl font-bold md:text-3xl">3 версии логотипа — от фасада до фавикона</h3>
               <p className={`${P} text-muted-foreground`}>Знак и шрифтовая часть имеют равный визуальный вес и самостоятельны: работают и в паре, и по отдельности. Три начертания покрывают любой носитель — от стикера до вывески.</p>
             </div>
-            <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className={`${ROW} md:grid-cols-3`}>
               {[
                 [sign, "Знак", "Фавикон, аватар, тиснение"],
                 [vertical, "Вертикальная", "Полиграфия, бейджи, упаковка"],
                 [horizontal, "Горизонтальная", "Сайт, вывеска, шапки документов"],
               ].map(([img, t, d]) => (
                 <figure key={t as string}>
-                  <Img src={(img as { url: string }).url} alt={`${t} версия логотипа Relumo`} className="aspect-[4/3]" />
+                  <Img src={(img as { url: string }).url} alt={`${t} версия логотипа Relumo`} className={PHOTO} />
                   <figcaption className="mt-4">
                     <p className="font-display font-bold">{t as string}</p>
                     <p className="text-sm text-muted-foreground">{d as string}</p>
@@ -167,19 +170,19 @@ function Relumo() {
             </div>
           </div>
 
-          {/* 3. Цвет: текст слева, палитра справа */}
-          <div className="grid items-center gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
+          {/* 3. Колористика: текст слева, палитра справа */}
+          <div className={TEXT_LEFT}>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Колористика</h3>
               <p className={P}><b>База (доверие и статус):</b> <span className="text-muted-foreground">глубокий, сложный B2B-синий в контрасте с тёплым бежевым — тень и сам свет.</span></p>
               <p className={P}><b>Акценты (digital):</b> <span className="text-muted-foreground">яркий жёлтый для CTA и цифровой среды — в связке с синим выглядит дорого, а не ядовито.</span></p>
             </div>
-            <Img src={i03.url} alt="Фирменная палитра Relumo" className="aspect-[3/2]" />
+            <Img src={i03.url} alt="Фирменная палитра Relumo" className={PHOTO} />
           </div>
 
-          {/* 4. Паттерн: картинка слева, текст справа */}
-          <div className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
-            <Img src={i11.url} alt="Паттерн из треугольников Relumo" className="aspect-[3/2]" />
+          {/* 4. Паттерн: фото слева, текст справа */}
+          <div className={IMG_LEFT}>
+            <Img src={i11.url} alt="Паттерн из треугольников Relumo" className={PHOTO} />
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Паттерн с «пасхалкой»</h3>
               <p className={`${P} text-muted-foreground`}>Сформирован из базового треугольника призмы, в негативном пространстве которого зашифрована буква «М» — прямая отсылка к названию по запросу клиента.</p>
@@ -189,19 +192,19 @@ function Relumo() {
       </section>
 
       <section className="border-b p-6 py-16 md:p-16 md:py-24">
-        <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-          <Img src={i15.url} alt="Деловая полиграфия Relumo" className="aspect-[16/9] md:col-span-2" />
-          <Img src={i08.url} alt="Визитки и ручки с логотипом" className="aspect-[4/3]" />
-          <Img src={i12.url} alt="Бейдж сотрудника" className="aspect-[4/3]" />
-          <Img src={i09.url} alt="Сайт Relumo на ноутбуке" className="aspect-[16/9] md:col-span-2" />
-          <Img src={i13.url} alt="Световая вывеска на фасаде" className="aspect-[4/3]" />
-          <Img src={i14.url} alt="Логотип в луче света" className="aspect-[4/3]" />
+        <div className="grid gap-6 md:grid-cols-2">
+          <Img src={i15.url} alt="Деловая полиграфия Relumo" className={`${WIDE} md:col-span-2`} />
+          <Img src={i08.url} alt="Визитки и ручки с логотипом" className={PHOTO} />
+          <Img src={i12.url} alt="Бейдж сотрудника" className={PHOTO} />
+          <Img src={i09.url} alt="Сайт Relumo на ноутбуке" className={`${WIDE} md:col-span-2`} />
+          <Img src={i13.url} alt="Световая вывеска на фасаде" className={PHOTO} />
+          <Img src={i14.url} alt="Логотип в луче света" className={PHOTO} />
         </div>
       </section>
 
       <section className="border-b p-6 py-16 md:p-16 md:py-24">
-        <H2 n="04">Результат и бизнес-эффект</H2>
-        <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">
+        <H2>Результат и бизнес-эффект</H2>
+        <div className={TEXT_LEFT}>
           <p className={P}>Заказчик пришел за логотипом, а ушел с комплексной инфраструктурой бренда, готовой к масштабированию без постоянного вовлечения сторонних арт-директоров. Глубокая метафора стала визуальным фильтром: айдентика с первого дня транслирует статус компании и вызывает доверие крупных B2B-заказчиков в премиум-сегменте.</p>
           <div className="space-y-4">
             <p className="font-mono text-sm uppercase text-muted-foreground">Защита проекта</p>

@@ -41,10 +41,9 @@ const steps = [
   ["Внедрение", "Передача исходников, интерактивных гайдлайнов и готового препресса без возвратов из типографии."],
 ];
 
-function Title({ n, children }: { n: string; children: string }) {
+function Title({ children }: { children: string }) {
   return (
-    <div className="flex items-baseline gap-4 border-b px-6 py-16 md:px-16 md:py-24">
-      <span className="font-mono text-sm text-primary">[{n}]</span>
+    <div className="border-b px-6 py-16 md:px-16 md:py-24">
       <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>
     </div>
   );
