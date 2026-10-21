@@ -137,9 +137,10 @@ function Relumo() {
                   ["Основание — архитектура", "Физическая среда и интерьер, с которыми работает студия."],
                   ["Срез — луч света", "Свет поступает в призму, преломляется и отражается от её граней."],
                   ["Буква «L»", "Тот же луч дублируется в названии и выведен выше набора — лёгкая «панковость» разбивает строгость B2B-шрифта."],
-                ].map(([t, d]) => (
+                ].map(([t, d], k) => (
                   <div key={t} className="border p-6 transition-colors duration-150 hover:border-primary">
-                    <p className="font-display text-lg font-bold">{t}</p>
+                    <p className="font-mono text-xs text-primary">0{k + 1}</p>
+                    <p className="mt-2 font-display text-lg font-bold">{t}</p>
                     <p className="mt-2 text-muted-foreground">{d}</p>
                   </div>
                 ))}
