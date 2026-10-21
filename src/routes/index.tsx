@@ -24,15 +24,15 @@ const exp = [
   { t: "Индустриальный опыт", c: "Опыт работы ведущим дизайнером на проектах в сфере HoReCa (рестораны, лаунж-бары). Полный цикл ведения проектов: от создания визуального кода и леттеринга до контроля тиражей на производстве." },
 ];
 const stack = [
-  { t: "Вектор и Проектирование", c: "Figma, Adobe Illustrator, InDesign, Photoshop, Tilda. Создание сложных векторных иллюстраций, UI-компонентов и многостраничной верстки." },
-  { t: "AI-визуализация", c: "Midjourney, Stable Diffusion. Глубокий промпт-инжиниринг для генерации 4K/8K рендеров, настройка реалистичного студийного света и сложных текстур (стекло, металл, ткань)." },
-  { t: "Производство и препресс", c: "100% готовность к печати. Перевод в CMYK/Pantone, векторные контуры для УФ-лака и тиснения, контроль цветопроб." },
+  { t: "Вектор и Проектирование", c: "Figma, Adobe Illustrator, InDesign, Photoshop, Tilda. Создание сложных векторных иллюстраций, UI-компонентов и многостраничной верстки.", tools: ["Figma", "Illustrator", "InDesign", "Photoshop", "Tilda"] },
+  { t: "AI-визуализация", c: "Midjourney, Stable Diffusion. Глубокий промпт-инжиниринг для генерации 4K/8K рендеров, настройка реалистичного студийного света и сложных текстур (стекло, металл, ткань).", tools: ["Midjourney", "Stable Diffusion", "4K/8K"] },
+  { t: "Производство и препресс", c: "100% готовность к печати. Перевод в CMYK/Pantone, векторные контуры для УФ-лака и тиснения, контроль цветопроб.", tools: ["CMYK", "Pantone", "УФ-лак", "Тиснение"] },
 ];
 const cases = [
-  { n: "Relumo", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
-  { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
-  { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
-  { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
+  { n: "Relumo", sub: "B2B · Identity", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров." },
+  { n: "Цмокі", sub: "HoReCa · Packaging", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать." },
+  { n: "Кейс 03", sub: "Скоро", c: "Скоро." },
+  { n: "Кейс 04", sub: "Скоро", c: "Скоро." },
 ];
 const steps = [
   ["Анализ", "Выявление ограничений (бюджет печати, ТЗ производства, контекст ниши)."],
@@ -40,117 +40,189 @@ const steps = [
   ["Система", "Построение сетки, типографической пары, цветового кодирования. Адаптивность носителей."],
   ["Внедрение", "Передача исходников, интерактивных гайдлайнов и готового препресса без возвратов из типографии."],
 ];
+const facts = [
+  ["0", "правок в концепции Relumo"],
+  ["100%", "готовность макетов к печати"],
+  ["3", "ниши: HoReCa, ритейл, B2B"],
+];
+const focus = [
+  ["Айдентика и визуальные системы", 100],
+  ["Препресс и производство", 90],
+  ["AI-визуализация", 80],
+  ["Упаковка и навигация", 75],
+] as const;
 
-function Title({ children }: { children: string }) {
+function Eyebrow({ children }: { children: string }) {
   return (
-    <div className="border-b px-6 py-16 md:px-16 md:py-24">
-      <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>
+    <div>
+      <h2 className="eyebrow text-foreground">{children}</h2>
+      <div className="mt-4 h-0.5 w-10 bg-primary" />
     </div>
   );
 }
 
 function Index() {
   return (
-    <div className="mx-auto max-w-7xl border-x">
-      <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 border-b bg-background px-6 py-6 md:px-16">
-        <a href="#top" className="font-display font-bold">Милана Землянская <span className="text-muted-foreground">/ Brand Designer</span></a>
-        <nav className="flex items-center gap-8 text-sm font-semibold">
-          <a href="#experience" className="hidden hover:text-primary sm:inline">Опыт</a>
-          <a href="#stack" className="hidden hover:text-primary sm:inline">Стек</a>
-          <a href="#process" className="hidden hover:text-primary sm:inline">Процесс</a>
-          <a href="#cases" className="hidden hover:text-primary sm:inline">Кейсы</a>
-          <a href={CV} className="btn bg-foreground py-2 text-background">Скачать CV</a>
+    <div className="mx-auto max-w-7xl">
+      <header className="sticky top-0 z-50 grid grid-cols-[1fr_auto_1fr] items-center gap-4 border-b bg-background/95 px-6 py-5 backdrop-blur md:px-16">
+        <p className="eyebrow hidden text-[0.65rem] leading-relaxed text-muted-foreground sm:block">Brand &amp;<br />Communication Design</p>
+        <a href="#top" className="text-lg font-semibold tracking-tight">М<span className="text-primary">/</span>З</a>
+        <nav className="flex items-center justify-end gap-6 text-xs font-medium uppercase tracking-[0.15em]">
+          <a href="#cases" className="hidden hover:text-primary md:inline">Кейсы</a>
+          <a href="#skills" className="hidden hover:text-primary md:inline">Навыки</a>
+          <a href="#contact" className="hidden hover:text-primary md:inline">Контакты</a>
+          <a href={CV} className="text-primary hover:text-secondary">CV ↓</a>
         </nav>
       </header>
 
-      <section id="top" className="border-b">
-        <div className="px-6 py-24 md:px-16 md:py-40">
-          <p className="mb-6 font-mono text-sm text-muted-foreground">// Mid+/Senior · Full-time</p>
-          <h1 className="max-w-5xl text-5xl font-bold leading-[0.92] md:text-8xl tracking-tighter">
-            Бренд-дизайн и визуальные системы. <span className="text-primary">Без воды и случайных решений.</span>
+      {/* Hero */}
+      <section id="top" className="grid items-end gap-10 px-6 pt-16 md:grid-cols-[1.25fr_1fr] md:px-16 md:pt-24">
+        <div className="pb-16 md:pb-24">
+          <p className="eyebrow text-muted-foreground">Mid+/Senior · Full-time · Remote</p>
+          <h1 className="mt-6 text-6xl font-extrabold uppercase leading-[0.9] tracking-[-0.05em] md:text-8xl lg:text-[7.5rem]">
+            Милана<br />Землянская
           </h1>
-          <p className="mt-12 max-w-2xl text-lg md:text-xl text-muted-foreground">
-            Mid+/Senior дизайнер. Специализация: HoReCa, ритейл, сложные B2B-продукты. Выстраиваю проекты от поиска смысловой метафоры до безошибочного препресса.
+          <p className="eyebrow mt-6 text-primary">Brand &amp; Communication Designer</p>
+          <p className="mt-8 max-w-md text-lg text-muted-foreground">
+            Бренд-дизайн и визуальные системы. Без воды и случайных решений. Специализация: HoReCa, ритейл, сложные B2B-продукты — от смысловой метафоры до безошибочного препресса.
           </p>
-          <div className="mt-14 flex flex-wrap gap-6">
-            <a href="#cases" className="btn bg-primary text-primary-foreground">Смотреть кейсы →</a>
-            <a href={TG} className="btn">Написать в Telegram</a>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <a href="#cases" className="btn border-primary bg-primary text-primary-foreground hover:bg-background">Смотреть кейсы →</a>
+            <a href={TG} className="btn">Telegram</a>
+          </div>
+        </div>
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
+          <div className="absolute bottom-0 left-1/2 aspect-square w-[88%] -translate-x-1/2 rounded-full bg-sky" />
+          <div className="absolute inset-x-[10%] bottom-0 top-[6%] flex items-center justify-center rounded-t-full border border-dashed border-secondary/50 text-center text-xs uppercase tracking-[0.2em] text-secondary">
+            Место<br />для фото
           </div>
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-20 border-b">
-        <Title>Опыт и бэкграунд</Title>
-        <div className="grid md:grid-cols-2">
-          {exp.map((e) => (
-            <div key={e.t} className="border-b p-6 py-16 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:py-24 md:last:border-r-0">
-              <h3 className="text-2xl font-bold md:text-3xl">{e.t}</h3>
-              <p className="mt-6 max-w-lg text-lg text-muted-foreground">{e.c}</p>
-            </div>
-          ))}
+      {/* Facts strip */}
+      <section className="grid border-y bg-surface sm:grid-cols-3">
+        {facts.map(([n, t]) => (
+          <div key={t} className="border-b px-6 py-8 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0 md:px-16">
+            <div className="text-5xl font-light tracking-tight text-secondary">{n}</div>
+            <div className="eyebrow mt-2 text-[0.65rem] text-muted-foreground">{t}</div>
+          </div>
+        ))}
+      </section>
+
+      {/* Cases */}
+      <section id="cases" className="scroll-mt-20 grid gap-12 px-6 py-20 md:grid-cols-[220px_1fr] md:px-16 md:py-28">
+        <div>
+          <Eyebrow>Практика и кейсы</Eyebrow>
+          <p className="mt-6 text-sm text-muted-foreground">Проекты, где смысл, система и производство собраны в одно целое.</p>
+        </div>
+        <div className="grid gap-10 sm:grid-cols-2">
+          {cases.map((c, i) => {
+            const inner = (
+              <>
+                <div className="flex items-baseline gap-3 border-b pb-3">
+                  <span className="text-sm font-semibold text-primary">0{i + 1}</span>
+                  <div>
+                    <h3 className="eyebrow text-foreground">{c.n}</h3>
+                    <p className="text-xs text-muted-foreground">{c.sub}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex aspect-[4/3] items-center justify-center overflow-hidden border bg-placeholder text-xs uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-150 group-hover:border-primary">
+                  {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "Скоро"}
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground">{c.c}</p>
+              </>
+            );
+            return "to" in c && c.to ? (
+              <Link key={c.n} to="/cases/relumo" className="group block">{inner}</Link>
+            ) : (
+              <article key={c.n} className="group">{inner}</article>
+            );
+          })}
         </div>
       </section>
 
-      <section id="stack" className="scroll-mt-16 border-b">
-        <Title>Технический стек и компетенции</Title>
-        <div className="grid md:grid-cols-3">
-          {stack.map((s, i) => (
-            <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:last:border-r-0">
-              <span className="font-mono text-sm text-secondary">0{i + 1}</span>
-              <h3 className="mt-4 text-2xl font-bold">{s.t}</h3>
-              <p className="mt-4 text-muted-foreground">{s.c}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="cases" className="scroll-mt-16 border-b">
-        <Title>Практика и кейсы</Title>
-        <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
-          {cases.map((c) => (
-            <article key={c.n} className="relative cursor-pointer border bg-background transition-colors duration-150 hover:border-primary">
-              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border-b bg-placeholder font-mono text-sm text-muted-foreground">
-                {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
-              </div>
-              <div className="p-8 md:p-16">
-                <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n} →</Link> : c.n}</h3>
-                <p className="mt-2 text-muted-foreground">{c.c}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {c.tags.map((t) => <span key={t} className="border px-2 py-0.5 font-mono text-xs">[{t}]</span>)}
+      {/* Skills + experience */}
+      <section id="skills" className="scroll-mt-20 grid gap-16 border-t px-6 py-20 md:grid-cols-2 md:px-16 md:py-28">
+        <div>
+          <Eyebrow>Фокус и стек</Eyebrow>
+          <ul className="mt-10 space-y-5">
+            {focus.map(([t, v]) => (
+              <li key={t} className="grid grid-cols-[minmax(0,1fr)_120px] items-center gap-4 text-sm sm:grid-cols-[minmax(0,1fr)_180px]">
+                <span className="text-xs font-medium uppercase tracking-[0.12em]">{t}</span>
+                <span className="h-1 bg-muted"><span className="block h-full bg-secondary" style={{ width: `${v}%` }} /></span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-12 space-y-8">
+            {stack.map((s, i) => (
+              <div key={s.t} className="grid grid-cols-[2.5rem_1fr] gap-4">
+                <span className="text-sm font-semibold text-primary">0{i + 1}</span>
+                <div>
+                  <h3 className="font-semibold">{s.t}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.c}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {s.tools.map((t) => <span key={t} className="bg-sky/40 px-2 py-0.5 text-xs text-secondary">{t}</span>)}
+                  </div>
                 </div>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
+        </div>
+        <div className="md:border-l md:pl-16">
+          <Eyebrow>Опыт и бэкграунд</Eyebrow>
+          <ol className="mt-10 space-y-10 border-l pl-8">
+            {exp.map((e) => (
+              <li key={e.t} className="relative">
+                <span className="absolute -left-[37px] top-1.5 h-3 w-3 rounded-full border-2 border-primary bg-background" />
+                <h3 className="font-semibold">{e.t}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{e.c}</p>
+              </li>
+            ))}
+          </ol>
+          <blockquote className="mt-14 border p-8">
+            <span className="text-5xl leading-none text-primary">“</span>
+            <p className="mt-2">Выстраиваю проекты от поиска смысловой метафоры до безошибочного препресса.</p>
+          </blockquote>
         </div>
       </section>
 
-      <section id="process" className="scroll-mt-16 border-b">
-        <Title>Архитектура рабочего процесса</Title>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4">
+      {/* Process */}
+      <section id="process" className="border-t bg-surface px-6 py-20 md:px-16 md:py-28">
+        <Eyebrow>Архитектура рабочего процесса</Eyebrow>
+        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(([t, c], i) => (
-            <div key={t} className="border-b p-6 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 md:p-12">
-              <div className="font-display text-6xl font-bold text-primary">{i + 1}.</div>
-              <h3 className="mt-6 text-2xl font-bold">{t}</h3>
-              <p className="mt-3 text-muted-foreground">{c}</p>
+            <div key={t} className="relative">
+              <div className="flex items-center gap-3">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-secondary text-sm font-semibold text-secondary-foreground">{i + 1}</span>
+                <span className="hidden h-px flex-1 bg-border lg:block" />
+              </div>
+              <h3 className="mt-6 font-semibold uppercase tracking-[0.12em]">{t}</h3>
+              <p className="mt-3 text-sm text-muted-foreground">{c}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <footer>
-        <div className="border-b bg-primary px-6 py-20 text-primary-foreground md:px-16">
-          <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА К НАЙМУ / FULL-TIME</p>
-        </div>
-        <div className="grid md:grid-cols-2">
-          <p className="border-b p-6 text-lg md:border-b-0 md:border-r md:p-16">
+      {/* Contact */}
+      <footer id="contact" className="grid gap-12 border-t px-6 py-20 md:grid-cols-[1fr_1fr_auto] md:px-16 md:py-24">
+        <div>
+          <Eyebrow>Открыта к найму</Eyebrow>
+          <p className="mt-6 max-w-xs text-sm text-muted-foreground">
             Ищу удаленную работу в штате (от 80k ₽) или долгосрочные контракты. Готова к тестовому заданию.
           </p>
-          <div className="flex flex-wrap items-center gap-4 p-6 md:p-16">
-            <a href={TG} className="btn">Telegram</a>
-            <a href={MAIL} className="btn">Email</a>
-            <a href={CV} className="btn bg-secondary text-secondary-foreground">Download Resume</a>
-          </div>
         </div>
+        <ul className="space-y-6 md:border-l md:pl-16">
+          {[["Telegram", TG, "@username"], ["Email", MAIL, "hello@example.com"], ["Резюме", CV, "Download Resume"]].map(([l, h, v]) => (
+            <li key={l}>
+              <p className="eyebrow text-[0.65rem] text-muted-foreground">{l}</p>
+              <a href={h} className="text-sm hover:text-primary">{v}</a>
+            </li>
+          ))}
+        </ul>
+        <a href={TG} className="flex min-h-40 w-full flex-col justify-between border border-secondary p-6 transition-colors duration-150 hover:border-primary md:w-60">
+          <span className="eyebrow text-secondary">Давайте сделаем сильный бренд вместе</span>
+          <span className="self-end text-2xl text-primary">→</span>
+        </a>
       </footer>
     </div>
   );
