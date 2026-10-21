@@ -190,10 +190,10 @@ function Relumo() {
 
       <section className="border-b p-6 py-16 md:p-16 md:py-24">
         <div className="grid gap-8 md:grid-cols-2 md:gap-12">
-          <Img src={i15.url} alt="Деловая полиграфия Relumo" className="aspect-[4/3]" />
+          <Img src={i15.url} alt="Деловая полиграфия Relumo" className="aspect-[16/9] md:col-span-2" />
           <Img src={i08.url} alt="Визитки и ручки с логотипом" className="aspect-[4/3]" />
-          <Img src={i09.url} alt="Сайт Relumo на ноутбуке" className="aspect-[4/3]" />
           <Img src={i12.url} alt="Бейдж сотрудника" className="aspect-[4/3]" />
+          <Img src={i09.url} alt="Сайт Relumo на ноутбуке" className="aspect-[16/9] md:col-span-2" />
           <Img src={i13.url} alt="Световая вывеска на фасаде" className="aspect-[4/3]" />
           <Img src={i14.url} alt="Логотип в луче света" className="aspect-[4/3]" />
         </div>
