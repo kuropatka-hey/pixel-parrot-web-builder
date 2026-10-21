@@ -41,10 +41,9 @@ const steps = [
   ["Внедрение", "Передача исходников, интерактивных гайдлайнов и готового препресса без возвратов из типографии."],
 ];
 
-function Title({ n, children }: { n: string; children: string }) {
+function Title({ children }: { children: string }) {
   return (
-    <div className="flex items-baseline gap-4 border-b px-6 py-16 md:px-16 md:py-24">
-      <span className="font-mono text-sm text-primary">[{n}]</span>
+    <div className="border-b px-6 py-16 md:px-16 md:py-24">
       <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>
     </div>
   );
@@ -81,7 +80,7 @@ function Index() {
       </section>
 
       <section id="experience" className="scroll-mt-20 border-b">
-        <Title n="01">Опыт и бэкграунд</Title>
+        <Title>Опыт и бэкграунд</Title>
         <div className="grid md:grid-cols-2">
           {exp.map((e) => (
             <div key={e.t} className="border-b p-6 py-16 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:py-24 md:last:border-r-0">
@@ -93,7 +92,7 @@ function Index() {
       </section>
 
       <section id="stack" className="scroll-mt-16 border-b">
-        <Title n="02">Технический стек и компетенции</Title>
+        <Title>Технический стек и компетенции</Title>
         <div className="grid md:grid-cols-3">
           {stack.map((s, i) => (
             <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:last:border-r-0">
@@ -106,7 +105,7 @@ function Index() {
       </section>
 
       <section id="cases" className="scroll-mt-16 border-b">
-        <Title n="03">Практика и кейсы</Title>
+        <Title>Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
           {cases.map((c) => (
             <article key={c.n} className="relative cursor-pointer border bg-background transition-colors duration-150 hover:border-primary">
@@ -126,7 +125,7 @@ function Index() {
       </section>
 
       <section id="process" className="scroll-mt-16 border-b">
-        <Title n="04">Архитектура рабочего процесса</Title>
+        <Title>Архитектура рабочего процесса</Title>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(([t, c], i) => (
             <div key={t} className="border-b p-6 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 md:p-12">
