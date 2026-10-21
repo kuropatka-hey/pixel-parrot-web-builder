@@ -87,8 +87,8 @@ function Index() {
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-20 border-b border-primary text-primary">
-        <Title className="border-primary">Опыт и бэкграунд</Title>
+      <section id="experience" className="scroll-mt-20 border-b">
+        <Title className="text-primary">Опыт и бэкграунд</Title>
         <div className="grid gap-12 p-6 py-16 md:grid-cols-2 md:gap-16 md:p-16 md:py-24">
           <ul className="max-w-md space-y-8">
             {work.map((e) => (
@@ -117,7 +117,7 @@ function Index() {
       </section>
 
       <section id="stack" className="scroll-mt-16 border-b">
-        <Title>Технический стек и компетенции</Title>
+        <Title className="text-primary">Технический стек и компетенции</Title>
         <div className="grid md:grid-cols-3">
           {stack.map((s, i) => (
             <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:[&:nth-child(-n+3)]:border-b md:[&:nth-child(n+4)]:border-b-0 md:border-r md:[&:nth-child(3n)]:border-r-0 md:p-16">
@@ -130,7 +130,7 @@ function Index() {
       </section>
 
       <section id="cases" className="scroll-mt-16 border-b">
-        <Title>Практика и кейсы</Title>
+        <Title className="text-primary">Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
           {cases.map((c) => {
             const accent = "accent" in c && c.accent;
