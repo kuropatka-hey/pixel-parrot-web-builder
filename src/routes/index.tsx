@@ -19,9 +19,13 @@ const TG = "https://t.me/";
 const MAIL = "mailto:hello@example.com";
 const CV = "#";
 
-const exp = [
-  { t: "Образование и база", c: "Классическая художественная школа и профильный колледж по специальности «Графический дизайн». Глубокое академическое понимание композиции, колористики и работы с паттернами." },
-  { t: "Индустриальный опыт", c: "Опыт работы ведущим дизайнером на проектах в сфере HoReCa (рестораны, лаунж-бары). Полный цикл ведения проектов: от создания визуального кода и леттеринга до контроля тиражей на производстве." },
+const work = [
+  { y: "2024-2026", t: "Старший графический дизайнер", c: "Esteem.pro" },
+  { y: "2023-2026", t: "Фриланс", c: "проекты" },
+];
+const edu = [
+  { y: "—", t: "Диплом художественной школы", c: "" },
+  { y: "—", t: "Профильный диплом колледжа", c: "" },
 ];
 const stack = [
   { t: "Вектор и Проектирование", c: "Figma, Adobe Illustrator, InDesign, Photoshop, Tilda. Создание сложных векторных иллюстраций, UI-компонентов и многостраничной верстки." },
@@ -83,11 +87,16 @@ function Index() {
       <section id="experience" className="scroll-mt-20 border-b">
         <Title>Опыт и бэкграунд</Title>
         <div className="grid md:grid-cols-2">
-          {exp.map((e) => (
-            <div key={e.t} className="border-b p-6 py-16 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:py-24 md:last:border-r-0">
-              <h3 className="text-2xl font-bold md:text-3xl">{e.t}</h3>
-              <p className="mt-6 max-w-lg text-lg text-muted-foreground">{e.c}</p>
-            </div>
+          {[work, edu].map((list, i) => (
+            <ul key={i} className={`list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:p-16 md:py-24 ${i === 0 ? "md:border-r md:last:border-r-0" : ""}`}>
+              {list.map((e) => (
+                <li key={e.t} className="flex flex-wrap items-baseline gap-x-6 border-b py-6 first:pt-0 last:border-b-0 last:pb-0">
+                  <span className="w-24 shrink-0 font-mono text-sm text-secondary">{e.y}</span>
+                  <span className="text-lg font-semibold md:text-xl">{e.t}</span>
+                  {e.c && <span className="text-muted-foreground">{e.c}</span>}
+                </li>
+              ))}
+            </ul>
           ))}
         </div>
       </section>
