@@ -36,7 +36,7 @@ const stack = [
   { t: "Коммуникация", c: "Открытая и прозрачная коммуникация на каждом этапе, анализ фидбеков и \"защита\" своих решений. Работаю в формате партнера, а не исполнителя " },
 ];
 const cases = [
-  { n: "Relumo", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
+  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
   { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
@@ -138,7 +138,7 @@ function Index() {
                 {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
               </div>
               <div className="p-8 md:p-16">
-                <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n} →</Link> : c.n}</h3>
+                <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n}</Link> : c.n}</h3>
                 <p className="mt-2 text-muted-foreground">{c.c}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {c.tags.map((t) => <span key={t} className="border px-2 py-0.5 font-mono text-xs">[{t}]</span>)}
