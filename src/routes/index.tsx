@@ -69,7 +69,7 @@ function Index() {
           <h1 className="max-w-5xl text-5xl font-bold leading-[0.92] md:text-8xl tracking-tighter">
             Графический бренд дизайнер
           </h1>
-          <p className="mt-6 font-display text-5xl font-bold leading-[0.92] tracking-tighter text-primary md:text-8xl">Милана Землянская</p>
+          <p className="mt-4 font-display text-2xl font-bold leading-tight tracking-tighter text-primary md:text-[45px]">Милана Землянская</p>
           <p className="mt-12 max-w-2xl text-lg md:text-xl text-muted-foreground">
             Более 3х лет в сфере / B2B, HoReCa / Подход к дизайну через маркетинг и глубокий анализ
           </p>
