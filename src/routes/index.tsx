@@ -109,7 +109,7 @@ function Index() {
         <Title n="03">Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
           {cases.map((c) => (
-            <article key={c.n} className="relative cursor-pointer border bg-background transition-[transform,box-shadow] duration-75 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal">
+            <article key={c.n} className="relative cursor-pointer border bg-background transition-colors duration-150 hover:border-primary">
               <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border-b bg-placeholder font-mono text-sm text-muted-foreground">
                 {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
               </div>
