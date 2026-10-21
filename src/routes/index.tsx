@@ -112,7 +112,7 @@ function Index() {
         <Title>Технический стек и компетенции</Title>
         <div className="grid md:grid-cols-3">
           {stack.map((s, i) => (
-            <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:last:border-r-0">
+            <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:[&:nth-child(-n+3)]:border-b md:[&:nth-child(n+4)]:border-b-0 md:border-r md:[&:nth-child(3n)]:border-r-0 md:p-16">
               <span className="font-mono text-sm text-secondary">0{i + 1}</span>
               <h3 className="mt-4 text-2xl font-bold">{s.t}</h3>
               <p className="mt-4 text-muted-foreground">{s.c}</p>
