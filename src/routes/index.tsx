@@ -53,7 +53,7 @@ function Index() {
   return (
     <div className="mx-auto max-w-7xl border-x">
       <header className="sticky top-0 z-50 flex flex-wrap items-center justify-between gap-4 border-b bg-background px-6 py-6 md:px-16">
-        <a href="#top" className="font-display font-bold">Милана Землянская <span className="text-muted-foreground">/ Brand Designer</span></a>
+        <a href="#top" className="font-display font-bold">Милана Землянская <span className="text-muted-foreground">/ Бренд дизайнер</span></a>
         <nav className="flex items-center gap-8 text-sm font-semibold">
           <a href="#experience" className="hidden hover:text-primary sm:inline">Опыт</a>
           <a href="#stack" className="hidden hover:text-primary sm:inline">Стек</a>
@@ -65,12 +65,12 @@ function Index() {
 
       <section id="top" className="border-b">
         <div className="px-6 py-24 md:px-16 md:py-40">
-          <p className="mb-6 font-mono text-sm text-muted-foreground">// Mid+/Senior · Full-time</p>
+          <p className="mb-6 font-mono text-sm text-muted-foreground">middle</p>
           <h1 className="max-w-5xl text-5xl font-bold leading-[0.92] md:text-8xl tracking-tighter">
-            Бренд-дизайн и визуальные системы. <span className="text-primary">Без воды и случайных решений.</span>
+            Графический бренд дизайнер
           </h1>
           <p className="mt-12 max-w-2xl text-lg md:text-xl text-muted-foreground">
-            Mid+/Senior дизайнер. Специализация: HoReCa, ритейл, сложные B2B-продукты. Выстраиваю проекты от поиска смысловой метафоры до безошибочного препресса.
+            Более 3х лет в сфере / B2B, HoReCa / Подход к дизайну через маркетинг и глубокий анализ
           </p>
           <div className="mt-14 flex flex-wrap gap-6">
             <a href="#cases" className="btn bg-primary text-primary-foreground">Смотреть кейсы →</a>
