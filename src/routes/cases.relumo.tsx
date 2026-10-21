@@ -6,8 +6,6 @@ import horizontal from "@/assets/relumo/relumo-horizontal.jpg.asset.json";
 import i01 from "@/assets/relumo/relumo-01.jpg.asset.json";
 import i02 from "@/assets/relumo/relumo-02.jpg.asset.json";
 import i03 from "@/assets/relumo/relumo-03.jpg.asset.json";
-import i04 from "@/assets/relumo/relumo-04.jpg.asset.json";
-import i05 from "@/assets/relumo/relumo-05.jpg.asset.json";
 import i07 from "@/assets/relumo/relumo-07.jpg.asset.json";
 import i08 from "@/assets/relumo/relumo-08.jpg.asset.json";
 import i09 from "@/assets/relumo/relumo-09.jpg.asset.json";
@@ -198,8 +196,6 @@ function Relumo() {
           <Img src={i12.url} alt="Бейдж сотрудника" className="aspect-[4/3]" />
           <Img src={i13.url} alt="Световая вывеска на фасаде" className="aspect-[4/3]" />
           <Img src={i14.url} alt="Логотип в луче света" className="aspect-[4/3]" />
-          <Img src={i04.url} alt="Стикеры с логотипом" className="aspect-[4/3]" />
-          <Img src={i05.url} alt="Фигурный стикер со знаком" className="aspect-[4/3]" />
         </div>
       </section>
 
