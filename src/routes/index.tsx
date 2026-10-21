@@ -36,7 +36,7 @@ const stack = [
   { t: "Коммуникация", c: "Открытая и прозрачная коммуникация на каждом этапе, анализ фидбеков и \"защита\" своих решений. Работаю в формате партнера, а не исполнителя " },
 ];
 const cases = [
-  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
+  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: true, c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
   { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
@@ -132,20 +132,23 @@ function Index() {
       <section id="cases" className="scroll-mt-16 border-b">
         <Title>Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
-          {cases.map((c) => (
-            <article key={c.n} className="relative cursor-pointer border bg-background transition-colors duration-150 hover:border-primary">
-              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border-b bg-placeholder font-mono text-sm text-muted-foreground">
-                {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
-              </div>
-              <div className="p-8 md:p-16">
-                <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n}</Link> : c.n}</h3>
-                <p className="mt-2 text-muted-foreground">{c.c}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {c.tags.map((t) => <span key={t} className="border px-2 py-0.5 font-mono text-xs">[{t}]</span>)}
+          {cases.map((c) => {
+            const accent = "accent" in c && c.accent;
+            return (
+              <article key={c.n} className={`relative cursor-pointer border transition-colors duration-150 ${accent ? "bg-primary text-primary-foreground hover:border-primary-foreground" : "bg-background hover:border-primary"}`}>
+                <div className={`flex aspect-[4/3] items-center justify-center overflow-hidden border-b font-mono text-sm ${accent ? "border-primary-foreground/60 bg-primary-foreground/10 text-primary-foreground/70" : "bg-placeholder text-muted-foreground"}`}>
+                  {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
                 </div>
-              </div>
-            </article>
-          ))}
+                <div className="p-8 md:p-16">
+                  <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n}</Link> : c.n}</h3>
+                  <p className={`mt-2 ${accent ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{c.c}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {c.tags.map((t) => <span key={t} className={`border px-2 py-0.5 font-mono text-xs ${accent ? "border-primary-foreground/40" : ""}`}>[{t}]</span>)}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
