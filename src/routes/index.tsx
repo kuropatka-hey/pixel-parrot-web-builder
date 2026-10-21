@@ -89,10 +89,12 @@ function Index() {
         <div className="grid md:grid-cols-2">
           <ul className="list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:py-24 md:last:border-r-0">
             {work.map((e) => (
-              <li key={e.y + e.t} className="flex min-h-24 flex-wrap items-center gap-x-5 border-b py-6 last:border-b-0 md:min-h-28">
+              <li key={e.y + e.t} className="flex min-h-24 items-center gap-x-6 border-b py-6 last:border-b-0 md:min-h-28">
                 <span className="w-24 shrink-0 font-mono text-sm text-secondary">{e.y}</span>
-                <span className="text-lg font-semibold md:text-xl">{e.t}</span>
-                {e.c && <span className="ml-1 text-muted-foreground">{e.c}</span>}
+                <span className="text-lg font-semibold md:text-xl">
+                  {e.t}
+                  {e.c && <span className="font-normal text-muted-foreground"> {e.c}</span>}
+                </span>
               </li>
             ))}
           </ul>
