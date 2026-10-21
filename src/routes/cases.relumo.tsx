@@ -214,7 +214,7 @@ function Relumo() {
         </div>
       </section>
 
-      <section className="border-b bg-primary p-6 py-20 text-foreground md:p-16 md:py-32">
+      <section className="border-b bg-secondary p-6 py-20 text-secondary-foreground md:p-16 md:py-32">
         <blockquote className="font-display text-2xl font-bold leading-tight tracking-tight md:text-4xl">
           <p>«Я понимаю, что у тебя нестандартный подход к задаче, ты глубоко выясняешь потребности клиента и его боль. В творческом процессе меня покорило то, что ты закладываешь сложную мысль в айдентику — это очень сильно выделяет тебя на фоне других дизайнеров.</p>
           <p className="mt-8">Ты не тот человек, который просто рисует красивую картинку и ставит банальную лампочку. Ты думаешь о том, как визуальная система поможет бизнесу продавать и развиваться. Это редкое сочетание качеств, когда эстетика напрямую работает на коммерческую цель».</p>
