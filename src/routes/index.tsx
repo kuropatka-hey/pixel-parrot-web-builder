@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import relumoCover from "@/assets/relumo/relumo-07.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,7 +29,7 @@ const stack = [
   { t: "Производство и препресс", c: "100% готовность к печати. Перевод в CMYK/Pantone, векторные контуры для УФ-лака и тиснения, контроль цветопроб." },
 ];
 const cases = [
-  { n: "Relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
+  { n: "Relumo", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
   { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
@@ -108,10 +109,12 @@ function Index() {
         <Title n="03">Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
           {cases.map((c) => (
-            <article key={c.n} className="cursor-pointer border bg-background transition-[transform,box-shadow] duration-75 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal">
-              <div className="flex aspect-[4/3] items-center justify-center border-b bg-placeholder font-mono text-sm text-muted-foreground">IMG / 1600×1200</div>
+            <article key={c.n} className="relative cursor-pointer border bg-background transition-[transform,box-shadow] duration-75 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal">
+              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border-b bg-placeholder font-mono text-sm text-muted-foreground">
+                {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
+              </div>
               <div className="p-8 md:p-16">
-                <h3 className="text-2xl font-bold">{c.n}</h3>
+                <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n} →</Link> : c.n}</h3>
                 <p className="mt-2 text-muted-foreground">{c.c}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {c.tags.map((t) => <span key={t} className="border px-2 py-0.5 font-mono text-xs">[{t}]</span>)}
