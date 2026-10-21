@@ -120,55 +120,73 @@ function Relumo() {
 
       <section className="border-b p-6 py-16 md:p-16 md:py-24">
         <H2 n="03">Архитектура дизайн-системы</H2>
-        <div className="mt-12 space-y-24">
-          {[
-            {
-              title: "Геометрия знака",
-              items: [
-                "Основа знака — треугольник (призма). Он символизирует три столпа светодизайна. Две нижние вершины — это архитектура и физическая среда. Они стремятся вверх и соединяются в высшей точке — человеке, ради которого создается световой сценарий.",
-                "В теле призмы графично вырезан луч. Свет поступает в призму, преломляется и отражается от ее граней.",
-                "Этот же вырезанный луч дублируется в шрифтовой части, образуя стилизованную букву «L» в названии ReLuma. Буква намеренно выведена выше основного набора: эта легкая «панковость» и неформальность разбивает строгость B2B-шрифта, делая логотип свежим и цепляющим.",
-              ],
-              img: <Img src={i02.url} alt="Построение знака Relumo по сетке" className="aspect-[3/2]" />,
-            },
-            {
-              title: "Три начертания для любых носителей",
-              items: [
-                "Знак и шрифтовая часть имеют равный визуальный вес и самостоятельны: каждая работает и в паре, и автономно.",
-                "Система включает три начертания — отдельный знак, вертикальную и горизонтальную версию логотипа. Так айдентика адаптируется под любой носитель: от фавикона и стикера до вывески на фасаде.",
-              ],
-              img: (
-                <div className="grid gap-6 md:grid-cols-3">
-                  <Img src={sign.url} alt="Знак Relumo отдельно" className="aspect-[3/2]" />
-                  <Img src={vertical.url} alt="Вертикальная версия логотипа" className="aspect-[3/2]" />
-                  <Img src={horizontal.url} alt="Горизонтальная версия логотипа" className="aspect-[3/2]" />
-                </div>
-              ),
-            },
-            {
-              title: "Колористика",
-              items: [
-                <><b>База (Доверие и статус):</b> Глубокий, сложный B2B-синий в контрасте с теплым бежевым (тень и сам свет).</>,
-                <><b>Акценты (Digital):</b> Яркий желтый для CTA-элементов и цифровой среды, который в связке с синим выглядит дорого, а не ядовито.</>,
-              ],
-              img: <Img src={i03.url} alt="Фирменная палитра Relumo" className="aspect-[3/2]" />,
-            },
-            {
-              title: "Паттерн",
-              items: [
-                "Сформирован из базового треугольника призмы, в негативном пространстве которого зашифрована буква «М» (прямая отсылка к названию по запросу клиента).",
-              ],
-              img: <Img src={i11.url} alt="Объёмный паттерн из треугольников" className="aspect-[3/2]" />,
-            },
-          ].map((b) => (
-            <div key={b.title} className="space-y-8">
-              <h3 className="text-2xl font-bold">{b.title}</h3>
-              <ul className={`${P} max-w-3xl space-y-6`}>
-                {b.items.map((t, k) => <li key={k}>• {t}</li>)}
-              </ul>
-              {b.img}
+        <div className="mt-16 space-y-32">
+          {/* 1. Геометрия знака: большая картинка + карточки-смыслы */}
+          <div>
+            <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
+              <h3 className="text-2xl font-bold md:text-3xl">Геометрия знака</h3>
+              <p className={`${P} text-muted-foreground`}>Основа знака — треугольник (призма). Он символизирует три столпа светодизайна: две нижние вершины стремятся вверх и соединяются в высшей точке.</p>
             </div>
-          ))}
+            <div className="mt-12 grid gap-6 md:grid-cols-[1.4fr_1fr]">
+              <Img src={i02.url} alt="Знак Relumo на синем фоне, вписанный в треугольник" className="aspect-[4/3] md:aspect-auto md:min-h-full" />
+              <div className="grid gap-6">
+                {[
+                  ["Вершина — человек", "Тот, ради которого создаётся световой сценарий."],
+                  ["Основание — архитектура", "Физическая среда и интерьер, с которыми работает студия."],
+                  ["Срез — луч света", "Свет поступает в призму, преломляется и отражается от её граней."],
+                  ["Буква «L»", "Тот же луч дублируется в названии и выведен выше набора — лёгкая «панковость» разбивает строгость B2B-шрифта."],
+                ].map(([t, d], k) => (
+                  <div key={t} className="border p-6 transition-colors duration-150 hover:border-primary">
+                    <p className="font-mono text-xs text-primary">0{k + 1}</p>
+                    <p className="mt-2 font-display text-lg font-bold">{t}</p>
+                    <p className="mt-2 text-muted-foreground">{d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 2. Три начертания */}
+          <div>
+            <div className="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-16">
+              <h3 className="text-2xl font-bold md:text-3xl">3 версии логотипа — от фасада до фавикона</h3>
+              <p className={`${P} text-muted-foreground`}>Знак и шрифтовая часть имеют равный визуальный вес и самостоятельны: работают и в паре, и по отдельности. Три начертания покрывают любой носитель — от стикера до вывески.</p>
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {[
+                [sign, "Знак", "Фавикон, аватар, тиснение"],
+                [vertical, "Вертикальная", "Полиграфия, бейджи, упаковка"],
+                [horizontal, "Горизонтальная", "Сайт, вывеска, шапки документов"],
+              ].map(([img, t, d]) => (
+                <figure key={t as string}>
+                  <Img src={(img as { url: string }).url} alt={`${t} версия логотипа Relumo`} className="aspect-[4/3]" />
+                  <figcaption className="mt-4">
+                    <p className="font-display font-bold">{t as string}</p>
+                    <p className="text-sm text-muted-foreground">{d as string}</p>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+
+          {/* 3. Цвет: текст слева, палитра справа */}
+          <div className="grid items-center gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold md:text-3xl">Колористика</h3>
+              <p className={P}><b>База (доверие и статус):</b> <span className="text-muted-foreground">глубокий, сложный B2B-синий в контрасте с тёплым бежевым — тень и сам свет.</span></p>
+              <p className={P}><b>Акценты (digital):</b> <span className="text-muted-foreground">яркий жёлтый для CTA и цифровой среды — в связке с синим выглядит дорого, а не ядовито.</span></p>
+            </div>
+            <Img src={i03.url} alt="Фирменная палитра Relumo" className="aspect-[3/2]" />
+          </div>
+
+          {/* 4. Паттерн: картинка слева, текст справа */}
+          <div className="grid items-center gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
+            <Img src={i11.url} alt="Паттерн из треугольников Relumo" className="aspect-[3/2]" />
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold md:text-3xl">Паттерн с «пасхалкой»</h3>
+              <p className={`${P} text-muted-foreground`}>Сформирован из базового треугольника призмы, в негативном пространстве которого зашифрована буква «М» — прямая отсылка к названию по запросу клиента.</p>
+            </div>
+          </div>
         </div>
       </section>
 
