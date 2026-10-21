@@ -76,10 +76,10 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section id="top" className="grid items-end gap-10 px-6 pt-16 md:grid-cols-[1.25fr_1fr] md:px-16 md:pt-24">
+      <section id="top" className="grid items-end gap-10 px-6 pt-16 md:grid-cols-[1.5fr_1fr] md:px-16 md:pt-24">
         <div className="pb-16 md:pb-24">
           <p className="eyebrow text-muted-foreground">Mid+/Senior · Full-time · Remote</p>
-          <h1 className="mt-6 text-6xl font-extrabold uppercase leading-[0.9] tracking-[-0.05em] md:text-8xl lg:text-[7.5rem]">
+          <h1 className="mt-6 text-6xl font-extrabold uppercase leading-[0.9] tracking-[-0.05em] md:text-7xl lg:text-[6.25rem]">
             Милана<br />Землянская
           </h1>
           <p className="eyebrow mt-6 text-primary">Brand &amp; Communication Designer</p>
