@@ -39,7 +39,7 @@ const meta = [
 
 function Img({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
-    <div className={`overflow-hidden border bg-placeholder transition-[transform,box-shadow] duration-75 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal ${className}`}>
+    <div className={`overflow-hidden border bg-placeholder transition-colors duration-150 hover:border-primary ${className}`}>
       <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
     </div>
   );
