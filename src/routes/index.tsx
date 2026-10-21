@@ -19,8 +19,8 @@ const TG = "https://t.me/";
 const MAIL = "mailto:hello@example.com";
 const CV = "#";
 
-const work = [
-  { y: "2024-2026", t: "Старший графический дизайнер Esteem.pro" },
+const work: { y: string; t: string; u?: string; l?: string }[] = [
+  { y: "2024-2026", t: "Старший графический дизайнер", u: "https://esteem.pro/", l: "Esteem.pro" },
   { y: "2023-2026", t: "Фриланс проекты" },
 ];
 const edu = [
@@ -48,9 +48,9 @@ const steps = [
   ["Внедрение", "Передача исходников, интерактивных гайдлайнов и готового препресса без возвратов из типографии."],
 ];
 
-function Title({ children }: { children: string }) {
+function Title({ children, className = "" }: { children: string; className?: string }) {
   return (
-    <div className="border-b px-6 py-16 md:px-16 md:py-24">
+    <div className={`border-b px-6 py-16 md:px-16 md:py-24 ${className}`}>
       <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>
     </div>
   );
@@ -87,14 +87,22 @@ function Index() {
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-20 border-b">
-        <Title>Опыт и бэкграунд</Title>
+      <section id="experience" className="scroll-mt-20 border-b border-primary text-primary">
+        <Title className="border-primary">Опыт и бэкграунд</Title>
         <div className="grid gap-12 p-6 py-16 md:grid-cols-2 md:gap-16 md:p-16 md:py-24">
           <ul className="max-w-md space-y-8">
             {work.map((e) => (
               <li key={e.y} className="border-l-2 border-primary pl-6">
                 <span className="font-mono text-xl font-medium text-primary md:text-2xl">{e.y}</span>
-                <p className="mt-2 text-base md:text-lg">{e.t}</p>
+                <p className="mt-2 text-base md:text-lg">
+                  {e.t}
+                  {" "}
+                  {e.u && (
+                    <a href={e.u} target="_blank" rel="noreferrer" className="underline decoration-primary/40 underline-offset-4 hover:decoration-primary">
+                      {e.l}
+                    </a>
+                  )}
+                </p>
               </li>
             ))}
           </ul>
