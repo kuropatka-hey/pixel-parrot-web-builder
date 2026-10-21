@@ -36,7 +36,7 @@ const stack = [
   { t: "Коммуникация", c: "Открытая и прозрачная коммуникация на каждом этапе, анализ фидбеков и \"защита\" своих решений. Работаю в формате партнера, а не исполнителя " },
 ];
 const cases = [
-  { n: "RELUMO\n", img: relumoCover.url, to: "/cases/relumo", c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
+  { n: "RELUMO\n", img: relumoCover.url, to: "/cases/relumo", accent: true, c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
   { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
@@ -87,18 +87,18 @@ function Index() {
         </div>
       </section>
 
-      <section id="experience" className="scroll-mt-20 border-b border-primary-foreground/40 bg-primary text-primary-foreground">
-        <Title className="border-primary-foreground/40">Опыт и бэкграунд</Title>
+      <section id="experience" className="scroll-mt-20 border-b border-primary text-primary">
+        <Title className="border-primary">Опыт и бэкграунд</Title>
         <div className="grid gap-12 p-6 py-16 md:grid-cols-2 md:gap-16 md:p-16 md:py-24">
           <ul className="max-w-md space-y-8">
             {work.map((e) => (
-              <li key={e.y} className="border-l-2 border-primary-foreground pl-6">
-                <span className="font-mono text-xl font-medium md:text-2xl">{e.y}</span>
+              <li key={e.y} className="border-l-2 border-primary pl-6">
+                <span className="font-mono text-xl font-medium text-primary md:text-2xl">{e.y}</span>
                 <p className="mt-2 text-base md:text-lg">
                   {e.t}
                   {" "}
                   {e.u && (
-                    <a href={e.u} target="_blank" rel="noreferrer" className="underline decoration-primary-foreground/50 underline-offset-4 hover:decoration-primary-foreground">
+                    <a href={e.u} target="_blank" rel="noreferrer" className="underline decoration-primary/40 underline-offset-4 hover:decoration-primary">
                       {e.l}
                     </a>
                   )}
@@ -108,7 +108,7 @@ function Index() {
           </ul>
           <ul className="max-w-md space-y-8">
             {edu.map((e) => (
-              <li key={e.t} className="border-l-2 border-primary-foreground pl-6">
+              <li key={e.t} className="border-l-2 border-primary pl-6">
                 <p className="text-base md:text-lg">{e.t}</p>
               </li>
             ))}
@@ -132,20 +132,23 @@ function Index() {
       <section id="cases" className="scroll-mt-16 border-b">
         <Title>Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
-          {cases.map((c) => (
-            <article key={c.n} className="relative cursor-pointer border bg-background transition-colors duration-150 hover:border-primary">
-              <div className="flex aspect-[4/3] items-center justify-center overflow-hidden border-b bg-placeholder font-mono text-sm text-muted-foreground">
-                {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
-              </div>
-              <div className="p-8 md:p-16">
-                <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n}</Link> : c.n}</h3>
-                <p className="mt-2 text-muted-foreground">{c.c}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {c.tags.map((t) => <span key={t} className="border px-2 py-0.5 font-mono text-xs">[{t}]</span>)}
+          {cases.map((c) => {
+            const accent = "accent" in c && c.accent;
+            return (
+              <article key={c.n} className={`relative cursor-pointer border transition-colors duration-150 ${accent ? "bg-primary text-primary-foreground hover:border-primary-foreground" : "bg-background hover:border-primary"}`}>
+                <div className={`flex aspect-[4/3] items-center justify-center overflow-hidden border-b font-mono text-sm ${accent ? "border-primary-foreground/60 bg-primary-foreground/10 text-primary-foreground/70" : "bg-placeholder text-muted-foreground"}`}>
+                  {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
                 </div>
-              </div>
-            </article>
-          ))}
+                <div className="p-8 md:p-16">
+                  <h3 className="text-2xl font-bold">{"to" in c && c.to ? <Link to="/cases/relumo" className="after:absolute after:inset-0">{c.n}</Link> : c.n}</h3>
+                  <p className={`mt-2 ${accent ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{c.c}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {c.tags.map((t) => <span key={t} className={`border px-2 py-0.5 font-mono text-xs ${accent ? "border-primary-foreground/40" : ""}`}>[{t}]</span>)}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
 
