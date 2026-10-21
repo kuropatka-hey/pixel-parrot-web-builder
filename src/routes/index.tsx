@@ -39,7 +39,6 @@ const steps = [
   ["Система", "Построение сетки, типографической пары, цветового кодирования. Адаптивность носителей."],
   ["Внедрение", "Передача исходников, интерактивных гайдлайнов и готового препресса без возвратов из типографии."],
 ];
-const mq = "Figma • Adobe CC • Midjourney / Stable Diffusion • Pre-press • Guidelines • Typography • ";
 
 function Title({ n, children }: { n: string; children: string }) {
   return (
@@ -106,7 +105,7 @@ function Index() {
       </section>
 
       <section id="cases" className="scroll-mt-16 border-b">
-        <Title n="04">Практика и кейсы</Title>
+        <Title n="03">Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
           {cases.map((c) => (
             <article key={c.n} className="cursor-pointer border bg-background transition-[transform,box-shadow] duration-75 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-brutal">
@@ -124,7 +123,7 @@ function Index() {
       </section>
 
       <section id="process" className="scroll-mt-16 border-b">
-        <Title n="03">Архитектура рабочего процесса</Title>
+        <Title n="04">Архитектура рабочего процесса</Title>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4">
           {steps.map(([t, c], i) => (
             <div key={t} className="border-b p-6 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 md:p-12">
