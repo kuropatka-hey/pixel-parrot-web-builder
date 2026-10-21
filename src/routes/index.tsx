@@ -90,15 +90,15 @@ function Index() {
           <ul className="max-w-md space-y-8">
             {work.map((e) => (
               <li key={e.y} className="border-l-2 border-primary pl-6">
-                <span className="font-mono text-lg font-medium text-primary md:text-xl">{e.y}</span>
-                <p className="mt-1 text-lg md:text-xl">{e.t}</p>
+                <span className="font-mono text-xl font-medium text-primary md:text-2xl">{e.y}</span>
+                <p className="mt-2 text-base md:text-lg">{e.t}</p>
               </li>
             ))}
           </ul>
           <ul className="max-w-md space-y-8">
             {edu.map((e) => (
               <li key={e.t} className="border-l-2 border-primary pl-6">
-                <p className="text-lg md:text-xl">{e.t}</p>
+                <p className="text-base md:text-lg">{e.t}</p>
               </li>
             ))}
           </ul>
