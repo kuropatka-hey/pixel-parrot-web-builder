@@ -87,17 +87,22 @@ function Index() {
       <section id="experience" className="scroll-mt-20 border-b">
         <Title>Опыт и бэкграунд</Title>
         <div className="grid md:grid-cols-2">
-          {[work, edu].map((list, i) => (
-            <ul key={i} className={`list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:p-16 md:py-24 ${i === 0 ? "md:border-r md:last:border-r-0" : ""}`}>
-              {list.map((e) => (
-                <li key={e.t} className="flex flex-wrap items-baseline gap-x-6 border-b py-6 first:pt-0 last:border-b-0 last:pb-0">
-                  <span className="w-24 shrink-0 font-mono text-sm text-secondary">{e.y}</span>
-                  <span className="text-lg font-semibold md:text-xl">{e.t}</span>
-                  {e.c && <span className="text-muted-foreground">{e.c}</span>}
-                </li>
-              ))}
-            </ul>
-          ))}
+          <ul className="list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:border-r md:p-16 md:py-24 md:last:border-r-0">
+            {work.map((e) => (
+              <li key={e.y + e.t} className="flex min-h-24 flex-wrap items-center gap-x-5 border-b py-6 last:border-b-0 md:min-h-28">
+                <span className="w-24 shrink-0 font-mono text-sm text-secondary">{e.y}</span>
+                <span className="text-lg font-semibold md:text-xl">{e.t}</span>
+                {e.c && <span className="ml-1 text-muted-foreground">{e.c}</span>}
+              </li>
+            ))}
+          </ul>
+          <ul className="list-none border-b p-6 py-16 last:border-b-0 md:border-b-0 md:p-16 md:py-24">
+            {edu.map((e) => (
+              <li key={e.t} className="flex min-h-24 items-center border-b py-6 last:border-b-0 md:min-h-28">
+                <span className="text-lg font-semibold md:text-xl">{e.t}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
