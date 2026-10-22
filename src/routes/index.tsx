@@ -41,12 +41,6 @@ const cases = [
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
 ];
-const steps = [
-  ["Анализ", "Выявление ограничений (бюджет печати, ТЗ производства, контекст ниши)."],
-  ["Метафора", "Разработка смыслового ядра. Отказ от банальных образов (напр. лампочки для света)."],
-  ["Система", "Построение сетки, типографической пары, цветового кодирования. Адаптивность носителей."],
-  ["Внедрение", "Передача исходников, интерактивных гайдлайнов и готового препресса без возвратов из типографии."],
-];
 
 function Title({ children, className = "" }: { children: string; className?: string }) {
   return (
@@ -63,9 +57,8 @@ function Index() {
         <a href="#top" className="font-display font-bold">Милана Землянская <span className="text-muted-foreground">/ Бренд дизайнер</span></a>
         <nav className="flex items-center gap-8 text-sm font-semibold">
           <a href="#experience" className="hidden hover:text-primary sm:inline">Опыт</a>
-          <a href="#stack" className="hidden hover:text-primary sm:inline">Стек</a>
-          <a href="#process" className="hidden hover:text-primary sm:inline">Процесс</a>
           <a href="#cases" className="hidden hover:text-primary sm:inline">Кейсы</a>
+          <a href="#stack" className="hidden hover:text-primary sm:inline">Стек</a>
           <a href={CV} className="btn bg-foreground py-2 text-background">Скачать CV</a>
         </nav>
       </header>
@@ -116,19 +109,6 @@ function Index() {
         </div>
       </section>
 
-      <section id="stack" className="scroll-mt-16 border-b">
-        <Title className="text-primary">Технический стек и компетенции</Title>
-        <div className="grid md:grid-cols-3">
-          {stack.map((s, i) => (
-            <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:[&:nth-child(-n+3)]:border-b md:[&:nth-child(n+4)]:border-b-0 md:border-r md:[&:nth-child(3n)]:border-r-0 md:p-16">
-              <span className="font-mono text-sm text-secondary">0{i + 1}</span>
-              <h3 className="mt-4 text-2xl font-bold">{s.t}</h3>
-              <p className="mt-4 text-muted-foreground">{s.c}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section id="cases" className="scroll-mt-16 border-b">
         <Title className="text-primary">Практика и кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
@@ -152,18 +132,19 @@ function Index() {
         </div>
       </section>
 
-      <section id="process" className="scroll-mt-16 border-b">
-        <Title>Архитектура рабочего процесса</Title>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map(([t, c], i) => (
-            <div key={t} className="border-b p-6 sm:[&:nth-child(odd)]:border-r lg:border-b-0 lg:border-r lg:last:border-r-0 md:p-12">
-              <div className="font-display text-6xl font-bold text-primary">{i + 1}.</div>
-              <h3 className="mt-6 text-2xl font-bold">{t}</h3>
-              <p className="mt-3 text-muted-foreground">{c}</p>
+      <section id="stack" className="scroll-mt-16 border-b">
+        <Title className="text-primary">Технический стек и компетенции</Title>
+        <div className="grid md:grid-cols-3">
+          {stack.map((s, i) => (
+            <div key={s.t} className="border-b p-6 last:border-b-0 md:border-b-0 md:[&:nth-child(-n+3)]:border-b md:[&:nth-child(n+4)]:border-b-0 md:border-r md:[&:nth-child(3n)]:border-r-0 md:p-16">
+              <span className="font-mono text-sm text-secondary">0{i + 1}</span>
+              <h3 className="mt-4 text-2xl font-bold">{s.t}</h3>
+              <p className="mt-4 text-muted-foreground">{s.c}</p>
             </div>
           ))}
         </div>
       </section>
+
 
       <footer>
         <div className="border-b bg-primary px-6 py-20 text-primary-foreground md:px-16">
