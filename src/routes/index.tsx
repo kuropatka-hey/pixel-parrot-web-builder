@@ -83,9 +83,8 @@ function Index() {
 
       <section id="experience" className="scroll-mt-20 border-b">
         <Title className="text-primary">Опыт и бэкграунд</Title>
-        <div className="relative grid gap-12 p-6 py-16 md:grid-cols-2 md:gap-16 md:p-16 md:py-24">
-          <div aria-hidden className="absolute inset-y-24 left-1/2 hidden w-px -translate-x-1/2 bg-border md:block" />
-          <ul className="w-full max-w-md space-y-8 border p-6 md:p-10">
+        <div className="grid gap-12 p-6 py-16 md:grid-cols-2 md:gap-16 md:p-16 md:py-24">
+          <ul className="max-w-md space-y-8">
             {work.map((e) => (
               <li key={e.y} className="border-l-2 border-primary pl-6">
                 <span className="font-mono text-xl font-medium text-primary md:text-2xl">{e.y}</span>
@@ -101,7 +100,7 @@ function Index() {
               </li>
             ))}
           </ul>
-          <ul className="w-full max-w-md space-y-8 border p-6 md:p-10">
+          <ul className="max-w-md space-y-8">
             {edu.map((e) => (
               <li key={e.t} className="border-l-2 border-primary pl-6">
                 <p className="text-base md:text-lg">{e.t}</p>
