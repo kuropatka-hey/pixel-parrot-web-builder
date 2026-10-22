@@ -37,7 +37,7 @@ const stack = [
   { t: "Коммуникация", c: "Открытая и прозрачная коммуникация на каждом этапе, анализ фидбеков и \"защита\" своих решений. Работаю в формате партнера, а не исполнителя " },
 ];
 const cases = [
-  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: false, c: "B2B-стартап. Айдентика, паттерны, гайдлайны. Метафора призмы. Принято без правок советом фаундеров.", tags: ["B2B", "Identity", "AI-assisted"] },
+  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: false, c: "Разработка комплексной айдентики для международной B2B студии светодизайна.", tags: ["B2B", "Identity", "AI-assisted"] },
   { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
@@ -66,7 +66,7 @@ function Index() {
 
       <section id="top" className="border-b">
         <div className="px-6 py-24 md:px-16 md:py-40">
-          <p className="mb-6 font-mono text-sm text-muted-foreground">middle</p>
+          <p className="mb-6 font-mono text-sm text-muted-foreground">{"\n"}</p>
           <h1 className="max-w-5xl text-5xl font-bold leading-[0.92] md:text-8xl tracking-tighter">
             Графический бренд дизайнер
           </h1>
