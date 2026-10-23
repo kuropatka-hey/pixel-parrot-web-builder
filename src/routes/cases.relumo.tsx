@@ -130,8 +130,10 @@ function Relumo() {
               <h3 className="text-2xl font-bold md:text-3xl">Геометрия знака</h3>
               <p className={`${P} text-muted-foreground`}>Основа знака — треугольная призма. Она символизирует три столпа светодизайна: две нижние вершины стремятся вверх и соединяются в высшей точке.</p>
             </div>
-            <div className={IMG_LEFT}>
-              <Img src={i02.url} alt="Знак Relumo на синем фоне, вписанный в треугольник" className={PHOTO} />
+            <div className="grid items-stretch gap-10 md:grid-cols-[1.4fr_1fr] md:gap-16">
+              <div className="overflow-hidden border bg-placeholder transition-colors duration-150 hover:border-primary">
+                <img src={i02.url} alt="Знак Relumo на синем фоне, вписанный в треугольник" loading="lazy" className="h-full w-full object-cover" />
+              </div>
               <div className="grid gap-6">
                 {[
                   ["Вершина — человек", "Тот, ради которого создаётся световой сценарий."],
