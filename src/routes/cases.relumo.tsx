@@ -59,6 +59,7 @@ const WIDE = "aspect-[16/9]";
 
 function Relumo() {
   return (
+    <div className="case-dark min-h-screen">
     <div className="mx-auto max-w-7xl border-x">
       <header className="sticky top-0 z-50 border-b bg-background px-6 py-6 md:px-16">
         <Link to="/" hash="cases" className="font-display font-bold hover:text-primary">← Назад к проектам</Link>
@@ -225,6 +226,7 @@ function Relumo() {
       <div className="p-6 md:p-16">
         <Link to="/" hash="cases" className="btn">← Назад к проектам</Link>
       </div>
+    </div>
     </div>
   );
 }
