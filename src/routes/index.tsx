@@ -37,8 +37,8 @@ const stack = [
   { t: "Коммуникация", c: "Открытая и прозрачная коммуникация на каждом этапе, анализ фидбеков и \"защита\" своих решений. Работаю в формате партнера, а не исполнителя " },
 ];
 const cases = [
-  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: false, c: "Разработка комплексной айдентики для международной B2B студии светодизайна.", tags: ["B2B", "Identity", "AI-assisted"] },
-  { n: "Цмокі", c: "Премиальный лаунж-бар. Модульные сетки, навигация, дизайн упаковки со снижением затрат на печать.", tags: ["HoReCa", "Packaging", "Pre-press"] },
+  { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: false, c: 'Разработка комплексной айдентики для международной B2B студии светодизайна "Relumo"', tags: ["B2B", "Identity", "AI-assisted"] },
+  { n: "Залесье", c: 'Разработка интерактивной фирменной графики в рамках существующего фирменного стиля для крупнейшего в стране АПХ "Залесье"', tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
 ];
@@ -151,12 +151,13 @@ function Index() {
 
       <footer>
         <div className="border-b bg-primary px-6 py-20 text-primary-foreground md:px-16">
-          <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА К  
-FULL-TIME</p>
+          <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА
+К FULL-TIME</p>
         </div>
         <div className="grid md:grid-cols-2">
           <p className="border-b p-6 text-lg md:border-b-0 md:border-r md:p-16">
-            Ищу удаленную работу в штате или долгосрочные проекты/контракты
+            Ищу удаленную работу в штате
+или долгосрочные проекты/контракты
           </p>
           <div className="flex flex-wrap items-center gap-4 p-6 md:p-16">
             <a href={TG} className="btn">Telegram</a>
