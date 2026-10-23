@@ -182,13 +182,13 @@ function Relumo() {
             <Img src={i03.url} alt="Фирменная палитра Relumo" className={PHOTO} />
           </div>
 
-          {/* 4. Паттерн: фото слева, текст справа */}
-          <div className={IMG_LEFT}>
-            <Img src={i11.url} alt="Паттерн из треугольников Relumo" className={PHOTO} />
+          {/* 4. Паттерн: текст слева, фото справа — та же сетка, что у колористики */}
+          <div className={TEXT_LEFT}>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Паттерн с «пасхалкой»</h3>
               <p className={`${P} text-muted-foreground`}>Сформирован из треугольника призмы, в негативном пространстве которого зашифрована буква «М» — прямая отсылка к названию по запросу клиента.</p>
             </div>
+            <Img src={i11.url} alt="Паттерн из треугольников Relumo" className={PHOTO} />
           </div>
         </div>
       </section>
