@@ -7,11 +7,12 @@ const SELECTOR =
 
 export function ScrollReveal() {
   const path = useRouterState({ select: (s) => s.location.pathname });
+  const status = useRouterState({ select: (s) => s.status });
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const els = Array.from(document.querySelectorAll<HTMLElement>(SELECTOR)).filter(
-      (el) => !el.closest("[data-no-reveal]") && !el.classList.contains("reveal"),
+      (el) => !el.closest("[data-no-reveal]") && !el.classList.contains("reveal-in"),
     );
     const vh = window.innerHeight;
     const io = new IntersectionObserver(
@@ -31,7 +32,7 @@ export function ScrollReveal() {
       io.observe(el);
     });
     return () => io.disconnect();
-  }, [path]);
+  }, [path, status]);
 
   return null;
 }
