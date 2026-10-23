@@ -32,6 +32,21 @@
   --shadow-brutal: 3px 3px 0 0 var(--foreground);
 }
 
+/* Тёмная тема страницы кейса — цвет фона взят с фото знака Relumo (rgb 10,57,85). */
+.case-dark {
+  --background: oklch(0.33 0.069 241);
+  --foreground: oklch(0.95 0.008 242);
+  --primary: oklch(0.8 0.06 240);
+  --primary-foreground: oklch(0.2 0.05 241);
+  --muted: oklch(0.42 0.06 241);
+  --muted-foreground: oklch(0.76 0.02 242);
+  --border: oklch(0.87 0.02 242);
+  --placeholder: oklch(0.42 0.06 241);
+  --shadow-brutal: 3px 3px 0 0 oklch(0.2 0.05 241);
+  background: var(--background);
+  color: var(--foreground);
+}
+
 @utility shadow-brutal { box-shadow: var(--shadow-brutal); }
 @utility btn {
   display: inline-flex; align-items: center; gap: .5rem;
