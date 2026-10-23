@@ -111,7 +111,7 @@ function Index() {
       </section>
 
       <section id="cases" className="scroll-mt-16 border-b">
-        <Title className="text-primary">Практика и кейсы</Title>
+        <Title className="text-primary">Избранные кейсы</Title>
         <div className="grid gap-16 p-6 md:grid-cols-2 md:p-16">
           {cases.map((c) => {
             const accent = "accent" in c && c.accent;
@@ -154,11 +154,12 @@ function Index() {
 
       <footer>
         <div className="border-b bg-primary px-6 py-20 text-primary-foreground md:px-16">
-          <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА К НАЙМУ / FULL-TIME</p>
+          <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА К  
+FULL-TIME</p>
         </div>
         <div className="grid md:grid-cols-2">
           <p className="border-b p-6 text-lg md:border-b-0 md:border-r md:p-16">
-            Ищу удаленную работу в штате (от 80k ₽) или долгосрочные контракты. Готова к тестовому заданию.
+            Ищу удаленную работу в штате или долгосрочные проекты/контракты
           </p>
           <div className="flex flex-wrap items-center gap-4 p-6 md:p-16">
             <a href={TG} className="btn">Telegram</a>
