@@ -67,7 +67,7 @@ function Relumo() {
 
       <section className="grid border-b md:grid-cols-2">
         <div className="border-b p-6 py-16 md:border-b-0 md:border-r md:p-16 md:py-24">
-          <p className="font-mono text-sm text-muted-foreground">// Case 01 · B2B · Identity</p>
+          <p className="font-mono text-sm text-muted-foreground">{"\n"}</p>
           <h1 className="mt-6 text-7xl font-bold leading-none tracking-tighter md:text-9xl">Relumo</h1>
         </div>
         <dl className="grid">
