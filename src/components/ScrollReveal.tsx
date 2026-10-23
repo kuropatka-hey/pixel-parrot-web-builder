@@ -7,6 +7,7 @@ const SELECTOR =
 
 export function ScrollReveal() {
   const path = useRouterState({ select: (s) => s.location.pathname });
+  const status = useRouterState({ select: (s) => s.status });
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
