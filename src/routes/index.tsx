@@ -72,7 +72,7 @@ function Index() {
           </h1>
           <p className="mt-4 font-display text-2xl font-bold leading-tight tracking-tighter text-primary md:text-[45px]">Милана Землянская</p>
           <p className="mt-12 max-w-2xl text-lg md:text-xl text-muted-foreground">
-            Более 3х лет в сфере / B2B, HoReCa / Комплексный подход к дизайну через маркетинг и глубокий анализ
+            Более 3х лет в сфере / B2B, HoReCa, Ритейл / Комплексный подход к дизайну через маркетинг и глубокий анализ
           </p>
           <div className="mt-14 flex flex-wrap gap-6">
             <a href="#cases" className="btn bg-primary text-primary-foreground">Смотреть кейсы →</a>
