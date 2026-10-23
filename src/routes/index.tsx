@@ -128,9 +128,6 @@ function Index() {
                 <div className="relative z-10 p-8 md:p-16">
                   <h3 className="text-2xl font-bold">{c.n}</h3>
                   <p className={`mt-2 ${accent ? "text-primary-foreground/80" : "text-muted-foreground"}`}>{c.c}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {c.tags.map((t) => <span key={t} className={`border px-2 py-0.5 font-mono text-xs ${accent ? "border-primary-foreground/40" : ""}`}>[{t}]</span>)}
-                  </div>
                 </div>
               </article>
             );
