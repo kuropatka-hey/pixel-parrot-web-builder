@@ -227,5 +227,6 @@ function Relumo() {
         <Link to="/" hash="cases" className="btn">← Назад к проектам</Link>
       </div>
     </div>
+    </div>
   );
 }
