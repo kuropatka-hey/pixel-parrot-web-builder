@@ -76,7 +76,7 @@ function Index() {
           </p>
           <div className="mt-14 flex flex-wrap gap-6">
             <a href="#cases" className="btn bg-primary text-primary-foreground">Смотреть кейсы →</a>
-            <a href={TG} className="btn">Написать в Telegram</a>
+            <a href={TG} className="btn">Контакты</a>
           </div>
         </div>
       </section>
