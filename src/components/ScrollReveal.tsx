@@ -32,7 +32,7 @@ export function ScrollReveal() {
       io.observe(el);
     });
     return () => io.disconnect();
-  }, [path]);
+  }, [path, status]);
 
   return null;
 }
