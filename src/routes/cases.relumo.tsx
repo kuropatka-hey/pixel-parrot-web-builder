@@ -48,7 +48,7 @@ function H2({ children }: { children: string }) {
   return <h2 className="text-3xl font-bold md:text-5xl">{children}</h2>;
 }
 
-const P = "text-lg md:text-xl";
+const P = "text-lg md:text-xl text-muted-foreground";
 // Общая сетка секций: заголовок сверху, ниже — текст и фото на одной колонночной сетке.
 const ROW = "mt-12 grid items-center gap-10 md:gap-16";
 const TEXT_LEFT = `${ROW} md:grid-cols-[1fr_1.4fr]`;
@@ -74,7 +74,7 @@ function Relumo() {
           {meta.map(([k, v]) => (
             <div key={k} className="grid gap-2 border-b p-6 last:border-b-0 md:grid-cols-[9rem_1fr] md:px-12 md:py-8">
               <dt className="font-mono text-sm uppercase text-primary">{k}</dt>
-              <dd className="text-lg">{v}</dd>
+              <dd className={P}>{v}</dd>
             </div>
           ))}
         </dl>
@@ -94,8 +94,8 @@ function Relumo() {
             <p className={P}>В ходе брифинга я выявила ключевое бизнес-требование: бренд строится на перспективу. Через 5 лет компания планирует масштабироваться и, возможно, выйти за пределы только светодизайна.</p>
           </div>
           <div className="grid gap-6">
-            <div className="border p-8"><b className="font-display">Проблема 1:</b> <span className={P}>Проект стартует с нуля. Я выявила потребность в построение полноценной системы айдентики и обосновала эффективность этого решения. Итог клиент согласился работать над айдентикой</span></div>
-            <div className="border p-8"><b className="font-display">Проблема 2:</b> <span className={P}>Нужен аутентичный знак, который транслирует идею «света» сейчас, но не потеряет актуальности при смене ниши (никаких прямых ассоциаций в лоб, вроде лампочек или искр/лучей).</span></div>
+            <div className="border p-8"><p className={P}>Проблема 1: Проект стартует с нуля. Я выявила потребность в построение полноценной системы айдентики и обосновала эффективность этого решения. Итог клиент согласился работать над айдентикой</p></div>
+            <div className="border p-8"><p className={P}>Проблема 2: Нужен аутентичный знак, который транслирует идею «света» сейчас, но не потеряет актуальности при смене ниши (никаких прямых ассоциаций в лоб, вроде лампочек или искр/лучей).</p></div>
           </div>
         </div>
       </section>
@@ -145,7 +145,7 @@ function Relumo() {
                   <div key={t} className="border p-6 transition-colors duration-150 hover:border-primary">
                     <p className="font-mono text-xs text-primary">0{k + 1}</p>
                     <p className="mt-2 font-display text-lg font-bold">{t}</p>
-                    <p className="mt-2 text-muted-foreground">{d}</p>
+                    <p className={`mt-2 ${P}`}>{d}</p>
                   </div>
                 ))}
               </div>
@@ -168,7 +168,7 @@ function Relumo() {
                   <Img src={(img as { url: string }).url} alt={`${t} версия логотипа Relumo`} className={PHOTO} />
                   <figcaption className="mt-4">
                     <p className="font-display font-bold">{t as string}</p>
-                    <p className="text-sm text-muted-foreground">{d as string}</p>
+                    <p className={`${P} mt-1`}>{d as string}</p>
                   </figcaption>
                 </figure>
               ))}
@@ -179,8 +179,8 @@ function Relumo() {
           <div className={TEXT_LEFT}>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Колористика</h3>
-              <p className={P}><b>База (доверие и статус):</b> <span className="text-muted-foreground">глубокий, сложный B2B-синий в контрасте с тёплым бежевым — тень и сам свет.</span></p>
-              <p className={P}><b>Акценты (digital):</b> <span className="text-muted-foreground">яркий жёлтый для CTA и цифровой среды — в связке с синим выглядит ярко, а не ядовито.</span></p>
+              <p className={P}>База (доверие и статус): глубокий, сложный B2B-синий в контрасте с тёплым бежевым — тень и сам свет.</p>
+              <p className={P}>Акценты (digital): яркий жёлтый для CTA и цифровой среды — в связке с синим выглядит ярко, а не ядовито.</p>
             </div>
             <Img src={i03.url} alt="Фирменная палитра Relumo" className={PHOTO} />
           </div>
@@ -221,7 +221,7 @@ function Relumo() {
           <p>«Я вижу, что у тебя нестандартный подход к задаче, ты глубоко выясняешь потребности клиента и его боль. В творческом процессе меня покорило то, что ты закладываешь сложную мысль в айдентику — это очень сильно выделяет тебя на фоне других дизайнеров.</p>
           <p className="mt-8">Ты не тот человек, который просто рисует красивую картинку и ставит банальную лампочку. Ты думаешь о том, как визуальная система поможет бизнесу продавать и развиваться. Это редкое сочетание качеств, когда эстетика напрямую работает на коммерческую цель».</p>
         </blockquote>
-        <p className="mt-12 font-mono text-sm uppercase">— АЛЕКСЕЙ ВДОНИН CEO &amp; CO-FOUNDER RELUMO</p>
+        <p className="mt-12 font-mono text-sm uppercase text-muted-foreground">— АЛЕКСЕЙ ВДОНИН CEO &amp; CO-FOUNDER RELUMO</p>
       </section>
 
       <div className="p-6 md:p-16">
