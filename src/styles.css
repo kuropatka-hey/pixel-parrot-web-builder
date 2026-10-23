@@ -18,17 +18,18 @@
   --color-placeholder: var(--placeholder);
 }
 
+/* Палитра главной: фон F7F2E7, синий 13479B, графитовый 222938, оранжевый E87E00. */
 :root {
-  --background: oklch(0.973 0.003 106);
-  --foreground: oklch(0.18 0 0);
-  --primary: oklch(0.53 0.09 258);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.64 0.09 38);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.92 0.005 106);
-  --muted-foreground: oklch(0.42 0 0);
-  --border: oklch(0.18 0 0);
-  --placeholder: oklch(0.82 0.003 106);
+  --background: #F7F2E7;
+  --foreground: #222938;
+  --primary: #13479B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E87E00;
+  --secondary-foreground: #FFFFFF;
+  --muted: #EFE7D6;
+  --muted-foreground: #6B7280;
+  --border: #222938;
+  --placeholder: #E7DECB;
   --shadow-brutal: 3px 3px 0 0 var(--foreground);
 }
 
