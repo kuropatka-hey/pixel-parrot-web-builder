@@ -98,7 +98,7 @@ function Zalesie() {
         </section>
 
         <section className="border-b p-6 md:p-16">
-          <Img src={cover.url} alt="Центральная иллюстрация Залесья: сады, мельница, поля и иконки направлений" className="aspect-[16/10] shadow-brutal" />
+          <Img src={cover.url} alt="Центральная иллюстрация Залесья: сады, мельница, поля и иконки направлений" className="aspect-[1.28/1] shadow-brutal" />
         </section>
 
         <Chapter title="Контекст и задача">
