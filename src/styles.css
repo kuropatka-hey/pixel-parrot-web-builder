@@ -51,7 +51,7 @@
 }
 
 /* Тёплое свечение в центре экрана: неподвижно при прокрутке, контент проходит над ним */
-.case-dark::before {
+.case-dark::before, .case-forest::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -68,7 +68,7 @@
 }
 
 /* Лёгкое зерно поверх фона: скрывает ступеньки затухания на тёмном */
-.case-dark::after {
+.case-dark::after, .case-forest::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -80,21 +80,23 @@
 
 
 
-/* Светлая тема страницы кейса «Залесье» — фон FFFDF0, тот же синий и графит. */
-.case-cream {
-  --background: #FFFDF0;
-  --foreground: #222938;
-  --primary: #13479B;
-  --primary-foreground: #FFFDF0;
+/* Тёмно-зелёная тема страницы кейса «Залесье» — фон 06281F, пшеничный акцент. */
+.case-forest {
+  --background: #06281F;
+  --foreground: #F2EFE4;
+  --primary: #E8B04B;
+  --primary-foreground: #06281F;
   --secondary: #E87E00;
   --secondary-foreground: #FFFFFF;
-  --muted: #F3EEDB;
-  --muted-foreground: #6B7280;
-  --border: #222938;
-  --placeholder: #EFE9D6;
-  --shadow-brutal: 3px 3px 0 0 var(--foreground);
+  --muted: #0E3A2D;
+  --muted-foreground: #A7B8AE;
+  --border: #CBD8D0;
+  --placeholder: #124334;
+  --shadow-brutal: 3px 3px 0 0 #04160F;
   background: var(--background);
   color: var(--foreground);
+  position: relative;
+  isolation: isolate;
 }
 
 @utility shadow-brutal { box-shadow: var(--shadow-brutal); }
