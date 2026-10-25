@@ -48,20 +48,17 @@ function Img({ src, alt, className = "" }: { src: string; alt: string; className
   );
 }
 
-/* Секция с липкой подписью слева и контентом справа */
+/* Секция: подпись сверху, ниже заголовок и контент на общей колонке */
 function Chapter({ label, title, children }: { label: string; title: string; children: ReactNode }) {
   return (
-    <section className="grid border-b md:grid-cols-[16rem_1fr]">
-      <div className="border-b p-6 md:border-b-0 md:border-r md:p-10">
-        <p className={`${LABEL} md:sticky md:top-28`}>{label}</p>
-      </div>
-      <div className="p-6 py-16 md:p-16 md:py-24">
-        <h2 className="max-w-3xl text-3xl font-bold md:text-5xl">{title}</h2>
-        <div className="mt-12">{children}</div>
-      </div>
+    <section className="border-b p-6 py-16 md:p-16 md:py-24">
+      <p className={LABEL}>{label}</p>
+      <h2 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">{title}</h2>
+      <div className="mt-12">{children}</div>
     </section>
   );
 }
+
 
 function Relumo() {
   return (
@@ -72,20 +69,24 @@ function Relumo() {
         </header>
 
         {/* Обложка */}
-        <section className="border-b p-6 pt-16 md:p-16 md:pt-24">
-          <p className={LABEL}>Айдентика для студии светодизайна</p>
-          <h1 className="mt-6 text-[22vw] font-bold leading-[0.85] tracking-tighter md:text-[12rem]">Relumo</h1>
-          <Img src={i07.url} alt="Логотип Relumo, подсвеченный на тёмно-синем фоне" className="mt-12 aspect-[16/9] shadow-brutal" />
+        <section className="grid border-b md:grid-cols-2">
+          <div className="border-b p-6 py-16 md:border-b-0 md:border-r md:p-16 md:py-24">
+            <h1 className="text-7xl font-bold leading-none tracking-tighter md:text-9xl">Relumo</h1>
+          </div>
+          <dl className="grid">
+            {meta.map(([k, v]) => (
+              <div key={k} className="grid gap-2 border-b p-6 last:border-b-0 md:grid-cols-[9rem_1fr] md:px-12 md:py-8">
+                <dt className={LABEL}>{k}</dt>
+                <dd className={`${P} whitespace-pre-line`}>{v}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
-        <dl className="grid border-b md:grid-cols-4">
-          {meta.map(([k, v]) => (
-            <div key={k} className="border-b p-6 last:border-b-0 md:border-b-0 md:border-r md:p-10 md:last:border-r-0">
-              <dt className={LABEL}>{k}</dt>
-              <dd className="mt-4 whitespace-pre-line text-base text-muted-foreground md:text-lg">{v}</dd>
-            </div>
-          ))}
-        </dl>
+        <section className="border-b p-6 md:p-16">
+          <Img src={i07.url} alt="Логотип Relumo, подсвеченный на тёмно-синем фоне" className="aspect-[16/9] shadow-brutal" />
+        </section>
+
 
         <Chapter label="Контекст" title="Контекст и бизнес-задача">
           <div className="grid gap-12 md:grid-cols-2">
