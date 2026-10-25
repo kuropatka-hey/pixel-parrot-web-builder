@@ -80,6 +80,23 @@
 
 
 
+/* Светлая тема страницы кейса «Залесье» — фон FFFDF0, тот же синий и графит. */
+.case-cream {
+  --background: #FFFDF0;
+  --foreground: #222938;
+  --primary: #13479B;
+  --primary-foreground: #FFFDF0;
+  --secondary: #E87E00;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F3EEDB;
+  --muted-foreground: #6B7280;
+  --border: #222938;
+  --placeholder: #EFE9D6;
+  --shadow-brutal: 3px 3px 0 0 var(--foreground);
+  background: var(--background);
+  color: var(--foreground);
+}
+
 @utility shadow-brutal { box-shadow: var(--shadow-brutal); }
 @utility btn {
   display: inline-flex; align-items: center; gap: .5rem;

@@ -77,7 +77,7 @@ const icons = [
 
 function Zalesie() {
   return (
-    <div className="case-dark min-h-screen">
+    <div className="case-cream min-h-screen">
       <div className="mx-auto max-w-7xl border-x">
         <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background px-6 py-6 md:px-16">
           <Link to="/" hash="cases" className="font-display font-bold hover:text-primary">← Назад к проектам</Link>
@@ -125,22 +125,14 @@ function Zalesie() {
             <Img src={main.url} alt="Логотип Залесья и модульная иллюстрация из квадратов" className="aspect-[1.28/1]" />
             <p className={P}>Основой системы стала модульная сетка из квадратов — прямое олицетворение объединения: разные, глубоко индивидуальные сектора холдинга собираются воедино в один слаженный механизм.</p>
           </div>
-        </section>
 
-        <Divider src={d3.url} alt="Колосья пшеницы крупным планом" />
-
-        <Chapter title="Архитектура графики">
-          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+          <div className="mt-24 grid items-center gap-10 md:grid-cols-2 md:gap-16">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold md:text-3xl">Цветовой код</h3>
-              <p className={P}>Базовая строгая палитра расширена до четырёх чистых цветов, которые транслируют эстетику и экологичность сельского хозяйства: зелёный — трава и деревья, жёлтый — поля и пшеница, голубой — небо.</p>
+              <h3 className="text-2xl font-bold md:text-3xl">Система смысловых иконок</h3>
+              <p className={P}>Минималистичные, приятные глазу образы, закреплённые за каждым сектором холдинга.</p>
             </div>
-            <Img src={palette.url} alt="Расширенная палитра Залесья" className="aspect-[1.28/1]" />
+            <Img src={pins.url} alt="Значки с иконками: корова, яблоко, ДНК, бутылка молока, колос" className="aspect-[1.28/1]" />
           </div>
-
-          <h3 className="mt-24 text-2xl font-bold md:text-3xl">Система смысловых иконок</h3>
-          <p className={`mt-4 max-w-3xl ${P}`}>Минималистичные, приятные глазу образы, закреплённые за каждым сектором холдинга.</p>
-          <Img src={pins.url} alt="Значки с иконками: корова, яблоко, ДНК, бутылка молока, колос" className="mt-10 aspect-[16/10]" />
           <div className="mt-6 grid gap-6 md:grid-cols-5">
             {icons.map(([t, d], k) => (
               <div key={t} className="border p-6 transition-colors duration-150 hover:border-primary">
@@ -158,6 +150,19 @@ function Zalesie() {
             </div>
             <Img src={textile.url} alt="Центральная иллюстрация на текстиле крупным планом" className="aspect-[1.28/1]" />
           </div>
+        </section>
+
+        <Divider src={d3.url} alt="Колосья пшеницы крупным планом" />
+
+        <Chapter title="Архитектура графики">
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold md:text-3xl">Цветовой код</h3>
+              <p className={P}>Базовая строгая палитра расширена до четырёх чистых цветов, которые транслируют эстетику и экологичность сельского хозяйства: зелёный — трава и деревья, жёлтый — поля и пшеница, голубой — небо.</p>
+            </div>
+            <Img src={palette.url} alt="Расширенная палитра Залесья" className="aspect-[1.28/1]" />
+          </div>
+
         </Chapter>
 
         <Chapter title="Адаптация и масштабируемость">
@@ -173,18 +178,18 @@ function Zalesie() {
         </Chapter>
 
         <Chapter title="Иконки как навигация">
-          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-            <Img src={cards.url} alt="Визитки руководителей с символами подразделений" className="aspect-[1.34/1]" />
+          <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
             <div className="space-y-6">
               <p className={P}>На визитках и бейджах топ-менеджеров вместо общего логотипа — крупный символ их подразделения. Директор по животноводству — корова, директор лаборатории — ДНК, генеральный директор — главный символ холдинга, колос.</p>
             </div>
+            <Img src={cards.url} alt="Визитки руководителей с символами подразделений" className="aspect-[1.28/1]" />
           </div>
-          <div className="mt-16 grid items-center gap-10 md:grid-cols-2 md:gap-16">
-            <div className="space-y-6 md:order-1">
+          <div className="mt-16 grid items-start gap-10 md:grid-cols-2 md:gap-16">
+            <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Польза для бизнеса</h3>
               <p className={P}>Решение упрощает нетворкинг на отраслевых выставках: зона ответственности каждого руководителя считывается с первой секунды.</p>
             </div>
-            <Img src={badge.url} alt="Бейдж генерального директора с колосом" className="aspect-[1.28/1] md:order-2" />
+            <Img src={badge.url} alt="Бейдж генерального директора с колосом" className="aspect-[1.28/1]" />
           </div>
         </Chapter>
 
