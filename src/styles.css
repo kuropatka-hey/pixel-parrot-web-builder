@@ -35,18 +35,33 @@
 
 /* Тёмная тема страницы кейса — цвет фона взят с фото знака Relumo (rgb 10,57,85). */
 .case-dark {
-  --background: oklch(0.33 0.069 241);
+  --background: oklch(0.19 0.05 241);
   --foreground: oklch(0.95 0.008 242);
   --primary: oklch(0.8 0.06 240);
   --primary-foreground: oklch(0.2 0.05 241);
-  --muted: oklch(0.42 0.06 241);
+  --muted: oklch(0.3 0.05 241);
   --muted-foreground: oklch(0.76 0.02 242);
   --border: oklch(0.87 0.02 242);
   --placeholder: oklch(0.42 0.06 241);
-  --shadow-brutal: 3px 3px 0 0 oklch(0.2 0.05 241);
+  --shadow-brutal: 3px 3px 0 0 oklch(0.1 0.04 241);
   background: var(--background);
   color: var(--foreground);
+  position: relative;
+  isolation: isolate;
 }
+
+/* Тёплое свечение в центре экрана: неподвижно при прокрутке, контент проходит над ним */
+.case-dark::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 50% 50%, rgba(232, 126, 0, 0.2) 0%, rgba(232, 126, 0, 0.09) 40%, rgba(232, 126, 0, 0) 72%),
+    radial-gradient(28% 22% at 50% 48%, rgba(255, 190, 110, 0.18) 0%, rgba(255, 190, 110, 0) 70%);
+}
+
 
 @utility shadow-brutal { box-shadow: var(--shadow-brutal); }
 @utility btn {
