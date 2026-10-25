@@ -51,7 +51,7 @@
 }
 
 /* Тёплое свечение в центре экрана: неподвижно при прокрутке, контент проходит над ним */
-.case-dark::before, .case-forest::before {
+.case-dark::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -68,7 +68,7 @@
 }
 
 /* Лёгкое зерно поверх фона: скрывает ступеньки затухания на тёмном */
-.case-dark::after, .case-forest::after {
+.case-dark::after {
   content: "";
   position: fixed;
   inset: 0;
@@ -90,7 +90,7 @@
   --secondary-foreground: #FFFFFF;
   --muted: #0E3A2D;
   --muted-foreground: #A7B8AE;
-  --border: #CBD8D0;
+  --border: #E6EEE9;
   --placeholder: #124334;
   --shadow-brutal: 3px 3px 0 0 #04160F;
   background: var(--background);
