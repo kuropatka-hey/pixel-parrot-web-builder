@@ -1,3 +1,4 @@
+import zalesieCover from "@/assets/zalesie/zalesie-cover.jpg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import relumoCover from "@/assets/relumo/relumo-07.jpg.asset.json";
 
@@ -38,7 +39,7 @@ const stack = [
 ];
 const cases = [
   { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: false, c: 'Разработка комплексной айдентики для международной B2B студии светодизайна "Relumo"', tags: ["B2B", "Identity", "AI-assisted"] },
-  { n: "ЗАЛЕСЬЕ", c: 'Разработка интерактивной фирменной графики в рамках существующего фирменного стиля для крупнейшего в стране АПХ "Залесье"', tags: ["HoReCa", "Packaging", "Pre-press"] },
+  { n: "ЗАЛЕСЬЕ", img: zalesieCover.url, to: "/cases/zalesie", accent: false, c: 'Разработка интерактивной фирменной графики в рамках существующего фирменного стиля для крупнейшего в стране АПХ "Залесье"', tags: ["HoReCa", "Packaging", "Pre-press"] },
   { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
   { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
 ];
@@ -118,7 +119,7 @@ function Index() {
             return (
               <article key={c.n} className={`relative cursor-pointer border transition-colors duration-150 ${accent ? "bg-primary text-primary-foreground hover:border-primary-foreground" : "bg-background hover:border-primary"}`}>
                 {"to" in c && c.to ? (
-                  <Link to="/cases/relumo" className="absolute inset-0 z-0" aria-label={c.n}>
+                  <Link to={c.to} className="absolute inset-0 z-0" aria-label={c.n}>
                     <span className="sr-only">Открыть кейс {c.n}</span>
                   </Link>
                 ) : null}
