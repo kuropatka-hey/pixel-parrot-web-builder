@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CasesRelumoRouteImport } from './routes/cases.relumo'
+import { Route as CasesZalesieRouteImport } from './routes/cases.zalesie'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const CasesRelumoRoute = CasesRelumoRouteImport.update({
   path: '/cases/relumo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CasesZalesieRoute = CasesZalesieRouteImport.update({
+  id: '/cases/zalesie',
+  path: '/cases/zalesie',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cases/relumo': typeof CasesRelumoRoute
+  '/cases/zalesie': typeof CasesZalesieRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cases/relumo': typeof CasesRelumoRoute
+  '/cases/zalesie': typeof CasesZalesieRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cases/relumo': typeof CasesRelumoRoute
+  '/cases/zalesie': typeof CasesZalesieRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cases/relumo'
+  fullPaths: '/' | '/cases/relumo' | '/cases/zalesie'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cases/relumo'
-  id: '__root__' | '/' | '/cases/relumo'
+  to: '/' | '/cases/relumo' | '/cases/zalesie'
+  id: '__root__' | '/' | '/cases/relumo' | '/cases/zalesie'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CasesRelumoRoute: typeof CasesRelumoRoute
+  CasesZalesieRoute: typeof CasesZalesieRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CasesRelumoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cases/zalesie': {
+      id: '/cases/zalesie'
+      path: '/cases/zalesie'
+      fullPath: '/cases/zalesie'
+      preLoaderRoute: typeof CasesZalesieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CasesRelumoRoute: CasesRelumoRoute,
+  CasesZalesieRoute: CasesZalesieRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
