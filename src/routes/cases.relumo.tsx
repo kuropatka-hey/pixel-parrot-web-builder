@@ -49,11 +49,11 @@ function Img({ src, alt, className = "" }: { src: string; alt: string; className
 }
 
 /* Секция: подпись сверху, ниже заголовок и контент на общей колонке */
-function Chapter({ label, title, children }: { label: string; title: string; children: ReactNode }) {
+function Chapter({ label, title, children }: { label?: string; title: string; children: ReactNode }) {
   return (
     <section className="border-b p-6 py-16 md:p-16 md:py-24">
-      <p className={LABEL}>{label}</p>
-      <h2 className="mt-6 max-w-3xl text-3xl font-bold md:text-5xl">{title}</h2>
+      {label ? <p className={LABEL}>{label}</p> : null}
+      <h2 className={`${label ? "mt-6 " : ""}max-w-3xl text-3xl font-bold md:text-5xl`}>{title}</h2>
       <div className="mt-12">{children}</div>
     </section>
   );
@@ -88,7 +88,7 @@ function Relumo() {
         </section>
 
 
-        <Chapter label="Контекст" title="Контекст и бизнес-задача">
+        <Chapter title="Контекст и бизнес-задача">
           <div className="grid gap-12 md:grid-cols-2">
             <div className="space-y-4">
               <p className="font-mono text-sm uppercase text-muted-foreground">Исходная ситуация</p>
@@ -113,7 +113,7 @@ function Relumo() {
           </div>
         </Chapter>
 
-        <Chapter label="Исследование" title="Исследование ниши">
+        <Chapter title="Исследование ниши">
           <p className={`${P} max-w-3xl`}>Аудит  конкурентов показал две полярные закономерности в визуале:</p>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {[
@@ -131,8 +131,7 @@ function Relumo() {
 
         {/* Метафора — крупная цитата во всю ширину */}
         <section className="border-b p-6 py-16 md:p-16 md:py-24">
-          <p className={LABEL}>Поиск метафоры</p>
-          <p className="mt-8 max-w-5xl font-display text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+          <p className="max-w-5xl font-display text-4xl font-bold leading-tight tracking-tight md:text-6xl">
             Основа концепции
           </p>
           <div className="mt-16 grid items-end gap-10 md:grid-cols-[1.5fr_1fr] md:gap-16">
@@ -153,7 +152,7 @@ function Relumo() {
           </div>
         </section>
 
-        <Chapter label="Дизайн-система" title="Архитектура дизайн-системы">
+        <Chapter title="Архитектура дизайн-системы">
           <h3 className="text-2xl font-bold md:text-3xl">Геометрия знака</h3>
           <p className={`mt-4 max-w-3xl ${P}`}>Основа знака — треугольная призма. Она символизирует три столпа светодизайна, где две нижние вершины стремятся вверх
 и соединяются в высшей точке.</p>
@@ -222,11 +221,8 @@ function Relumo() {
           </div>
         </section>
 
-        <Chapter label="Итог" title="Результат и бизнес-эффект">
-          <div className="grid gap-10 md:grid-cols-2">
-            <p className={P}>Заказчик пришел за логотипом, а ушел с комплексной айдентикой бренда, готовой к масштабированию без постоянного вовлечения сторонних подрядчиков. Глубокая метафора стала фундаментом для доверия B2B аудитории и транслирования статуса компании.</p>
-            <p className={P}>Концепция была принята без единой правки. В ходе презентации я успешно отработала возражения четырех кофаундеров, аргументировав каждое графическое решение через призму бизес-задач. Бренд успешно запущен и находится на стадии внедрения на физические носители и веб.</p>
-          </div>
+        <Chapter title="Результат и бизнес-эффект">
+          <p className={`${P} max-w-3xl`}>Концепция была принята без единой правки. В ходе презентации я успешно отработала возражения четырех кофаундеров, аргументировав каждое графическое решение через призму бизес-задач. Бренд успешно запущен и находится на стадии внедрения на физические носители и веб.</p>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {[
               ["Обоснование чека", "Глубокая метафора работает как фильтр аудитории: с первого дня транслирует статус и вызывает доверие крупных заказчиков."],
