@@ -167,13 +167,19 @@ function Zalesie() {
 
         <Chapter title="Адаптация и масштабируемость">
           <p className={`${P} max-w-3xl`}>Модульный формат обеспечил гибкость графики: паттерны в сборе ложатся на корпоративные блокноты, шопперы, мерч и объёмные выставочные фотозоны.</p>
-          <div className="mt-12 grid auto-rows-[14rem] gap-6 md:auto-rows-[18rem] md:grid-cols-6">
-            <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="md:col-span-4 md:row-span-2" />
-            <Img src={envelope.url} alt="Конверт с паттерном" className="md:col-span-2" />
-            <Img src={hoodie.url} alt="Худи с иллюстрацией" className="md:col-span-2" />
-            <Img src={shoppers.url} alt="Шопперы с паттерном" className="md:col-span-3" />
-            <Img src={bags.url} alt="Пакеты светлый и тёмный" className="md:col-span-3" />
-            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="md:col-span-6 md:row-span-2" />
+          <div className="mt-12 space-y-6">
+            <div className="grid gap-6 md:grid-cols-[1.9fr_1fr]">
+              <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="aspect-[1.28/1]" />
+              <div className="grid gap-6">
+                <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1]" />
+                <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1]" />
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              <Img src={shoppers.url} alt="Шопперы с паттерном" className="aspect-[1.28/1]" />
+              <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
+            </div>
+            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[1.5/1]" />
           </div>
         </Chapter>
 
