@@ -69,7 +69,6 @@ function Relumo() {
       <div className="mx-auto max-w-7xl border-x">
         <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background px-6 py-6 md:px-16">
           <Link to="/" hash="cases" className="font-display font-bold hover:text-primary">← Назад к проектам</Link>
-          <span className="hidden font-mono text-sm uppercase text-muted-foreground md:inline">Brand identity · 2024</span>
         </header>
 
         {/* Обложка */}
