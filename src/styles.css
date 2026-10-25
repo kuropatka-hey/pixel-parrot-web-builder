@@ -41,7 +41,7 @@
   --primary-foreground: oklch(0.2 0.05 241);
   --muted: oklch(0.3 0.05 241);
   --muted-foreground: oklch(0.76 0.02 242);
-  --border: oklch(0.87 0.02 242);
+  --border: #222938;
   --placeholder: oklch(0.42 0.06 241);
   --shadow-brutal: 3px 3px 0 0 oklch(0.1 0.04 241);
   background: var(--background);
@@ -110,7 +110,7 @@
 @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * { border-color: var(--border); }
   html { scroll-behavior: smooth; }
   body { line-height: 1.7; background: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); }
   h1,h2,h3 { font-family: var(--font-display); letter-spacing: -0.04em; }
