@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import cover from "@/assets/zalesie/zalesie-cover.jpg.asset.json";
 import d1 from "@/assets/zalesie/zalesie-d1.jpg.asset.json";
 import d2 from "@/assets/zalesie/zalesie-d2.jpg.asset.json";
-import d3 from "@/assets/zalesie/zalesie-d3.jpg.asset.json";
 import main from "@/assets/zalesie/zalesie-main.jpg.asset.json";
 import palette from "@/assets/zalesie/zalesie-palette.jpg.asset.json";
 import notebooks from "@/assets/zalesie/zalesie-notebooks.jpg.asset.json";
