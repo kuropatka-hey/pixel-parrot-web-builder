@@ -215,11 +215,11 @@ function Zalesie() {
         <Chapter title="Адаптация и масштабируемость">
           <p className={`${P} max-w-4xl`}>Модульный формат обеспечил гибкость графики: паттерны в сборе ложатся на корпоративные блокноты, шопперы, мерч и объёмные выставочные фотозоны.</p>
           <div className="mt-12 space-y-6">
-            <div className="grid gap-6 md:grid-cols-[1.9fr_1fr]">
+            <div className="grid gap-6 md:grid-cols-[2fr_1fr]">
               <Img src={set.url} alt="Комплект корпоративных носителей Залесья" className="aspect-[1.28/1]" />
-              <div className="grid gap-6">
-                <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1]" />
-                <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1]" />
+              <div className="grid gap-6 md:grid-rows-2">
+                <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
+                <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
               </div>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
@@ -227,23 +227,23 @@ function Zalesie() {
               <Img src={shoppers.url} alt="Шопперы с паттерном" className="aspect-[1.28/1]" />
               <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
             </div>
-            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[1.5/1]" />
+            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2/1]" />
           </div>
         </Chapter>
 
         <Chapter title="Иконки как навигация">
-          <div className="grid items-start gap-10 md:grid-cols-2 md:gap-16">
+          <div className="grid gap-10 md:grid-cols-2 md:gap-16">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Символ подразделения</h3>
               <p className={P}>На визитках и бейджах топ-менеджеров вместо общего логотипа — крупный символ их подразделения. Директор по животноводству — корова, директор лаборатории — ДНК, генеральный директор — главный символ холдинга, колос.</p>
             </div>
-            <Img src={cards.url} alt="Визитки руководителей с символами подразделений" className="aspect-[1.28/1]" />
-          </div>
-          <div className="mt-16 grid items-start gap-10 md:grid-cols-2 md:gap-16">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Польза для бизнеса</h3>
               <p className={P}>Решение упрощает нетворкинг на отраслевых выставках: зона ответственности каждого руководителя считывается с первой секунды.</p>
             </div>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <Img src={cards.url} alt="Визитки руководителей с символами подразделений" className="aspect-[1.28/1]" />
             <Img src={badge.url} alt="Бейдж генерального директора с колосом" className="aspect-[1.28/1]" />
           </div>
         </Chapter>
