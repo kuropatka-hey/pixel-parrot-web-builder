@@ -199,7 +199,6 @@ function Zalesie() {
           </div>
         </section>
 
-        <Divider src={d3.url} alt="Колосья пшеницы крупным планом" />
 
         <Chapter title="Архитектура графики">
           <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
