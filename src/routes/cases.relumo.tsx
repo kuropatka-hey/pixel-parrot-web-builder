@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { EditableImage } from "@/components/PhotoEditor";
 import sign from "@/assets/relumo/relumo-sign.jpg.asset.json";
 import vertical from "@/assets/relumo/relumo-vertical.jpg.asset.json";
 import horizontal from "@/assets/relumo/relumo-horizontal.jpg.asset.json";

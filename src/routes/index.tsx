@@ -1,6 +1,7 @@
 import zalesieCover from "@/assets/zalesie/zalesie-cover.jpg.asset.json";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import relumoCover from "@/assets/relumo/relumo-07.jpg.asset.json";
+import { EditableImage } from "@/components/PhotoEditor";
 
 export const Route = createFileRoute("/")({
   head: () => ({
