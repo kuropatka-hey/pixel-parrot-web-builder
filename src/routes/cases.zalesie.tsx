@@ -211,7 +211,7 @@ function Zalesie() {
             <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="aspect-[1.28/1]" />
             <Img src={pins.url} alt="Значки с иконками направлений" className="aspect-[1.28/1]" />
             <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
-            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2/1] md:col-span-3" />
+            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2332/1824] md:col-span-3" />
           </div>
         </Chapter>
 
