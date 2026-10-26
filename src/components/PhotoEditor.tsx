@@ -155,6 +155,7 @@ export function EditableImage({ src, alt, className = "", title, ...rest }: Edit
   const ctx = usePhotoEditorContext();
   const current = ctx?.overrides[src] ?? src;
   const editable = Boolean(ctx?.editMode);
+  const replacePhoto = ctx?.replacePhoto;
 
   return (
     <img
@@ -162,7 +163,7 @@ export function EditableImage({ src, alt, className = "", title, ...rest }: Edit
       src={current}
       alt={alt}
       title={editable ? "Нажмите, чтобы заменить фото" : title}
-      onClick={editable ? () => pickFile(ctx.replacePhoto, src) : rest.onClick}
+      onClick={editable && replacePhoto ? () => pickFile(replacePhoto, src) : rest.onClick}
       className={
         editable
           ? `${className} cursor-pointer hover:outline hover:outline-2 hover:-outline-offset-4 hover:outline-primary`
@@ -174,8 +175,9 @@ export function EditableImage({ src, alt, className = "", title, ...rest }: Edit
 
 /** Плавающая кнопка режима замены фото. */
 export function PhotoEditorToggle() {
-  const ctx = usePhotoEditorContext();
-  if (!ctx) return null;
+  const maybeCtx = usePhotoEditorContext();
+  if (!maybeCtx) return null;
+  const ctx = maybeCtx;
   const hasOverrides = Object.keys(ctx.overrides).length > 0;
 
   return (
