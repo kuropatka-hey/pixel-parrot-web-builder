@@ -189,7 +189,7 @@ function Zalesie() {
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Символ подразделения</h3>
-              <p className={P}>На визитках и бейджах топ-менеджеров вместо общего логотипа — крупный символ их подразделения. Директор по животноводству — корова, директор лаборатории — ДНК, генеральный директор — главный символ холдинга, колос.</p>
+              <p className={P}>На визитках и бейджах топ-менеджеров вместо общего логотипа — крупный символ их подразделения.</p>
             </div>
             <div className="space-y-6">
               <h3 className="text-2xl font-bold md:text-3xl">Польза для бизнеса</h3>
