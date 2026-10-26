@@ -204,7 +204,7 @@ function Zalesie() {
         </Chapter>
 
         <Chapter title="Адаптация и масштабируемость">
-          <p className={`${P} max-w-4xl`}>Модульный формат обеспечил гибкость графики:</p>
+          <p className={`${P} max-w-4xl`}>{"\n"}</p>
           <p className={`${P} max-w-4xl`}>Модульный формат обеспечил гибкость графики, благодаря чему носители выглядят разнообразно, но в то же время сохраняют систему.</p>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             <Img src={set.url} alt="Комплект корпоративных носителей Залесья" className="aspect-[1.28/1] md:col-span-2 md:row-span-2 md:aspect-auto md:h-full" />
