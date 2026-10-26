@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 import cover from "@/assets/zalesie/zalesie-cover.jpg.asset.json";
 import d1 from "@/assets/zalesie/zalesie-d1.jpg.asset.json";
 import d2 from "@/assets/zalesie/zalesie-d2.jpg.asset.json";
-import main from "@/assets/zalesie/zalesie-main-hq.webp.asset.json";
+import main from "@/assets/zalesie/zalesie-main-orig.png.asset.json";
 import paletteWide from "@/assets/zalesie/zalesie-palette-wide.webp.asset.json";
-import notebooks from "@/assets/zalesie/zalesie-notebooks-hq.webp.asset.json";
-import badge from "@/assets/zalesie/zalesie-badge-hq.webp.asset.json";
-import cards from "@/assets/zalesie/zalesie-cards-hq.webp.asset.json";
+import notebooks from "@/assets/zalesie/zalesie-notebooks-orig.png.asset.json";
+import badge from "@/assets/zalesie/zalesie-badge-orig.png.asset.json";
+import cards from "@/assets/zalesie/zalesie-cards-orig.png.asset.json";
 import pins from "@/assets/zalesie/zalesie-pins-hq.jpg.asset.json";
 import hoodie from "@/assets/zalesie/zalesie-hoodie-hq.jpg.asset.json";
 import shoppers from "@/assets/zalesie/zalesie-shoppers-hq.jpg.asset.json";
@@ -15,7 +15,7 @@ import textile from "@/assets/zalesie/zalesie-textile-hq.jpg.asset.json";
 import envelope from "@/assets/zalesie/zalesie-envelope-hq.jpg.asset.json";
 import bags from "@/assets/zalesie/zalesie-bags-hq.jpg.asset.json";
 import expo from "@/assets/zalesie/zalesie-expo-hq.jpg.asset.json";
-import set from "@/assets/zalesie/zalesie-set-hq.webp.asset.json";
+import set from "@/assets/zalesie/zalesie-set-orig.png.asset.json";
 
 export const Route = createFileRoute("/cases/zalesie")({
   head: () => ({
