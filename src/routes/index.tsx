@@ -19,7 +19,6 @@ export const Route = createFileRoute("/")({
 
 const TG = "https://t.me/milazemlya";
 const MAIL = "mailto:mmmila90@gmail.com";
-const CV = "#";
 
 const work: { y: string; t: string; u?: string; l?: string }[] = [
   { y: "2024-2026", t: "Старший графический дизайнер", u: "https://esteem.pro/", l: "Esteem.pro" },
