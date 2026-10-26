@@ -17,8 +17,8 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const TG = "https://t.me/";
-const MAIL = "mailto:hello@example.com";
+const TG = "https://t.me/milazemlya";
+const MAIL = "mailto:mmmila90@gmail.com";
 const CV = "#";
 
 const work: { y: string; t: string; u?: string; l?: string }[] = [
@@ -41,8 +41,6 @@ const stack = [
 const cases = [
   { n: "RELUMO", img: relumoCover.url, to: "/cases/relumo", accent: false, c: 'Разработка комплексной айдентики для международной B2B студии светодизайна "Relumo"', tags: ["B2B", "Identity", "AI-assisted"] },
   { n: "ЗАЛЕСЬЕ", img: zalesieCover.url, to: "/cases/zalesie", accent: false, c: 'Разработка интерактивной фирменной графики в рамках существующего фирменного стиля для крупнейшего в стране АПХ "Залесье"', tags: ["HoReCa", "Packaging", "Pre-press"] },
-  { n: "Кейс 03", c: "Скоро.", tags: ["TBA"] },
-  { n: "Кейс 04", c: "Скоро.", tags: ["TBA"] },
 ];
 
 function Title({ children, className = "" }: { children: string; className?: string }) {
@@ -62,7 +60,6 @@ function Index() {
           <a href="#experience" className="hidden hover:text-primary sm:inline">Опыт</a>
           <a href="#cases" className="hidden hover:text-primary sm:inline">Кейсы</a>
           <a href="#stack" className="hidden hover:text-primary sm:inline">Стек</a>
-          <a href={CV} className="btn bg-foreground py-2 text-background">Скачать CV</a>
         </nav>
       </header>
 
@@ -78,7 +75,7 @@ function Index() {
           </p>
           <div className="mt-14 flex flex-wrap gap-6">
             <a href="#cases" className="btn bg-primary text-primary-foreground">Смотреть кейсы →</a>
-            <a href={TG} className="btn">Контакты</a>
+            <a href="#contacts" className="btn">Контакты</a>
           </div>
         </div>
       </section>
@@ -156,15 +153,22 @@ function Index() {
           <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА
 К FULL-TIME</p>
         </div>
-        <div className="grid md:grid-cols-2">
+        <div id="contacts" className="grid scroll-mt-20 md:grid-cols-2">
           <p className="border-b p-6 text-lg md:border-b-0 md:border-r md:p-16">
             Ищу удаленную работу в штате
 или долгосрочные проекты/контракты
           </p>
-          <div className="flex flex-wrap items-center gap-4 p-6 md:p-16">
-            <a href={TG} className="btn">Telegram</a>
-            <a href={MAIL} className="btn">Email</a>
-            <a href={CV} className="btn bg-secondary text-secondary-foreground">Download Resume</a>
+          <div className="p-6 md:p-16">
+            <h3 className="font-display text-3xl font-bold tracking-tighter">Контакты</h3>
+            <ul className="mt-6 space-y-3 text-lg md:text-xl">
+              <li>
+                <a href={MAIL} className="hover:text-primary">email — mmmila90@gmail.com</a>
+              </li>
+              <li>
+                <a href={TG} className="hover:text-primary">telegram — @milazemlya</a>
+              </li>
+            </ul>
+            <a href={CV} className="btn mt-8 bg-secondary text-secondary-foreground">Download Resume</a>
           </div>
         </div>
       </footer>
