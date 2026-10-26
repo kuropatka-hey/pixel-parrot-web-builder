@@ -227,9 +227,6 @@ function Zalesie() {
               </div>
             ))}
           </div>
-          <div className="mt-6 border p-8">
-            <p className={P}><span className="font-bold text-foreground">Статус:</span> система собрана и описана в брендбуке.</p>
-          </div>
         </Chapter>
 
         <div className="p-6 md:p-16">
