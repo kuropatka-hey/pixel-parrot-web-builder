@@ -11,7 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { ScrollReveal } from "../components/ScrollReveal";
-import { PhotoOverridesProvider, PhotoEditorToggle } from "../components/PhotoEditor";
+import { PhotoOverridesProvider } from "../components/PhotoEditor";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -124,7 +124,6 @@ function RootComponent() {
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
         <ScrollReveal />
-        <PhotoEditorToggle />
       </PhotoOverridesProvider>
     </QueryClientProvider>
   );

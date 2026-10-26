@@ -153,23 +153,16 @@ function Index() {
           <p className="font-display text-[11vw] font-bold leading-[0.85] tracking-tighter lg:text-[8.5rem]">ОТКРЫТА
 К FULL-TIME</p>
         </div>
-        <div id="contacts" className="grid scroll-mt-20 md:grid-cols-2">
-          <p className="border-b p-6 text-lg md:border-b-0 md:border-r md:p-16">
-            Ищу удаленную работу в штате
-или долгосрочные проекты/контракты
-          </p>
-          <div className="p-6 md:p-16">
-            <h3 className="font-display text-3xl font-bold tracking-tighter">Контакты</h3>
-            <ul className="mt-6 space-y-3 text-lg md:text-xl">
-              <li>
-                <a href={MAIL} className="hover:text-primary">email — mmmila90@gmail.com</a>
-              </li>
-              <li>
-                <a href={TG} className="hover:text-primary">telegram — @milazemlya</a>
-              </li>
-            </ul>
-            <a href={CV} className="btn mt-8 bg-secondary text-secondary-foreground">Download Resume</a>
-          </div>
+        <div id="contacts" className="scroll-mt-20 border-b p-6 py-16 md:p-16 md:py-24">
+          <h3 className="font-display text-4xl font-bold tracking-tighter md:text-6xl">Контакты</h3>
+          <ul className="mt-8 space-y-4 font-display text-xl font-bold tracking-tighter md:text-4xl">
+            <li>
+              <a href={MAIL} className="hover:text-primary">email — mmmila90@gmail.com</a>
+            </li>
+            <li>
+              <a href={TG} className="hover:text-primary">telegram — @milazemlya</a>
+            </li>
+          </ul>
         </div>
       </footer>
     </div>
