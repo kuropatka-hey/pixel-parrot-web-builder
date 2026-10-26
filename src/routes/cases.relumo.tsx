@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { EditableImage } from "@/components/PhotoEditor";
 import sign from "@/assets/relumo/relumo-sign.jpg.asset.json";
 import vertical from "@/assets/relumo/relumo-vertical.jpg.asset.json";
 import horizontal from "@/assets/relumo/relumo-horizontal.jpg.asset.json";
@@ -43,7 +44,7 @@ const LABEL = "font-mono text-sm uppercase text-primary";
 function Img({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <div className={`overflow-hidden border bg-placeholder transition-colors duration-150 hover:border-primary ${className}`}>
-      <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+      <EditableImage src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
     </div>
   );
 }

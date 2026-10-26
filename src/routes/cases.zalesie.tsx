@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { EditableImage } from "@/components/PhotoEditor";
 import cover from "@/assets/zalesie/zalesie-cover.jpg.asset.json";
 import d1 from "@/assets/zalesie/zalesie-d1.jpg.asset.json";
 import d2 from "@/assets/zalesie/zalesie-d2.jpg.asset.json";
@@ -44,7 +45,7 @@ const LABEL = "font-mono text-sm uppercase text-primary";
 function Img({ src, alt, className = "" }: { src: string; alt: string; className?: string }) {
   return (
     <div className={`overflow-hidden border bg-placeholder transition-colors duration-150 hover:border-primary ${className}`}>
-      <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+      <EditableImage src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
     </div>
   );
 }
@@ -61,7 +62,7 @@ function Chapter({ title, children }: { title: string; children: ReactNode }) {
 function Divider({ src, alt }: { src: string; alt: string }) {
   return (
     <section className="border-b">
-      <img src={src} alt={alt} loading="lazy" className="h-56 w-full object-cover md:h-80" />
+      <EditableImage src={src} alt={alt} loading="lazy" className="h-56 w-full object-cover md:h-80" />
     </section>
   );
 }
