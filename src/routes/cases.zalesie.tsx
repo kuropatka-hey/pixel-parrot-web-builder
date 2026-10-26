@@ -158,29 +158,12 @@ function Zalesie() {
 
         <section className="border-b p-6 py-16 md:p-16 md:py-24">
           <p className="max-w-5xl font-display text-4xl font-bold leading-tight tracking-tight md:text-6xl">Концепция «конструктора»</p>
-          <div className="mt-16 grid items-end gap-10 md:grid-cols-[1.5fr_1fr] md:gap-16">
-            <Img src={main.url} alt="Логотип Залесья и модульная иллюстрация из квадратов" className="aspect-[1.28/1]" />
-            <div>
-              <p className={P}>Основой системы стала модульная сетка из квадратов — прямое олицетворение объединения: разные, глубоко индивидуальные сектора холдинга собираются воедино в один слаженный механизм.</p>
-              <div className="mt-10 grid grid-cols-3 border-t">
-                {directions.map(([n, d], k) => (
-                  <div key={d} className={`pt-6 ${k ? "border-l pl-6" : ""}`}>
-                    <p className="font-display text-5xl font-bold text-primary">{n}</p>
-                    <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          <Img src={main.url} alt="Логотип Залесья и модульная иллюстрация из квадратов" className="mt-12 aspect-[1.28/1]" />
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            <p className={P}>Основой системы стала модульная сетка из квадратов — прямое олицетворение объединения: разные, глубоко индивидуальные сектора холдинга собираются воедино в один слаженный механизм.</p>
+            <p className={P}>Минималистичные, приятные глазу образы, закреплённые за каждым сектором холдинга. Центральная иллюстрация — ядро графики: сады, фермерские постройки, поля и силосные башни, мини-копии реальных объектов холдинга. По краям, как детали конструктора, собираются иконки всех направлений.</p>
           </div>
-
-          <div className="mt-24 grid items-center gap-10 md:grid-cols-2 md:gap-16">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold md:text-3xl">Система смысловых иконок</h3>
-              <p className={P}>Минималистичные, приятные глазу образы, закреплённые за каждым сектором холдинга.</p>
-            </div>
-            <Img src={pins.url} alt="Значки с иконками: корова, яблоко, ДНК, бутылка молока, колос" className="aspect-[1.28/1]" />
-          </div>
-          <div className="mt-6 grid gap-6 md:grid-cols-5">
+          <div className="mt-12 grid gap-6 md:grid-cols-5">
             {icons.map(([t, d], k) => (
               <div key={t} className="border p-6 transition-colors duration-150 hover:border-primary">
                 <p className="font-mono text-xs text-primary">0{k + 1}</p>
@@ -189,13 +172,9 @@ function Zalesie() {
               </div>
             ))}
           </div>
-
-          <div className="mt-24 grid items-center gap-10 md:grid-cols-2 md:gap-16">
-            <Img src={textile.url} alt="Центральная иллюстрация на текстиле крупным планом" className="aspect-[1.28/1] md:order-2" />
-            <div className="space-y-6 md:order-1">
-              <h3 className="text-2xl font-bold md:text-3xl">Центральная иллюстрация</h3>
-              <p className={P}>Сборный пейзаж — ядро графики: сады, фермерские постройки, поля и силосные башни, мини-копии реальных объектов холдинга. По краям, как детали конструктора, собираются иконки всех направлений.</p>
-            </div>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <Img src={shoppers.url} alt="Три шоппера с паттерном" className="aspect-[1.28/1]" />
+            <Img src={textile.url} alt="Шоппер с центральной иллюстрацией крупным планом" className="aspect-[1.28/1]" />
           </div>
         </section>
 
@@ -207,25 +186,6 @@ function Zalesie() {
               <h3 className="text-2xl font-bold md:text-3xl">Цветовой код</h3>
               <p className={P}>Базовая строгая палитра расширена до четырёх чистых цветов, которые транслируют эстетику и экологичность сельского хозяйства: зелёный — трава и деревья, жёлтый — поля и пшеница, голубой — небо.</p>
             </div>
-          </div>
-        </Chapter>
-
-        <Chapter title="Адаптация и масштабируемость">
-          <p className={`${P} max-w-4xl`}>Модульный формат обеспечил гибкость графики: паттерны в сборе ложатся на корпоративные блокноты, шопперы, мерч и объёмные выставочные фотозоны.</p>
-          <div className="mt-12 space-y-6">
-            <div className="grid gap-6 md:grid-cols-3">
-              <Img src={set.url} alt="Комплект корпоративных носителей Залесья" className="aspect-[1.28/1] md:col-span-2" />
-              <div className="grid gap-6 md:grid-rows-2">
-                <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
-                <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
-              </div>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="aspect-[1.28/1]" />
-              <Img src={shoppers.url} alt="Шопперы с паттерном" className="aspect-[1.28/1]" />
-              <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
-            </div>
-            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2/1]" />
           </div>
         </Chapter>
 
@@ -243,6 +203,25 @@ function Zalesie() {
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             <Img src={cards.url} alt="Визитки руководителей с символами подразделений" className="aspect-[1.28/1]" />
             <Img src={badge.url} alt="Бейдж генерального директора с колосом" className="aspect-[1.28/1]" />
+          </div>
+        </Chapter>
+
+        <Chapter title="Адаптация и масштабируемость">
+          <p className={`${P} max-w-4xl`}>Модульный формат обеспечил гибкость графики: паттерны в сборе ложатся на корпоративные блокноты, шопперы, мерч и объёмные выставочные фотозоны.</p>
+          <div className="mt-12 space-y-6">
+            <div className="grid gap-6 md:grid-cols-3">
+              <Img src={set.url} alt="Комплект корпоративных носителей Залесья" className="aspect-[1.28/1] md:col-span-2" />
+              <div className="grid gap-6 md:grid-rows-2">
+                <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
+                <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
+              </div>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="aspect-[1.28/1]" />
+              <Img src={pins.url} alt="Значки с иконками направлений" className="aspect-[1.28/1]" />
+              <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
+            </div>
+            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2/1]" />
           </div>
         </Chapter>
 
