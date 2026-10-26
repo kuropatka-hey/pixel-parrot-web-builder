@@ -4,7 +4,7 @@ import cover from "@/assets/zalesie/zalesie-cover.jpg.asset.json";
 import d1 from "@/assets/zalesie/zalesie-d1.jpg.asset.json";
 import d2 from "@/assets/zalesie/zalesie-d2.jpg.asset.json";
 import main from "@/assets/zalesie/zalesie-main.jpg.asset.json";
-import palette from "@/assets/zalesie/zalesie-palette.jpg.asset.json";
+import paletteWide from "@/assets/zalesie/zalesie-palette-wide.webp.asset.json";
 import notebooks from "@/assets/zalesie/zalesie-notebooks.jpg.asset.json";
 import badge from "@/assets/zalesie/zalesie-badge.jpg.asset.json";
 import cards from "@/assets/zalesie/zalesie-cards.jpg.asset.json";
@@ -179,15 +179,11 @@ function Zalesie() {
         </section>
 
 
-        <Chapter title="Архитектура графики">
-          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
-            <Img src={palette.url} alt="Расширенная палитра Залесья" className="aspect-[1.28/1] md:order-2" />
-            <div className="space-y-6 md:order-1">
-              <h3 className="text-2xl font-bold md:text-3xl">Цветовой код</h3>
-              <p className={P}>Базовая строгая палитра расширена до четырёх чистых цветов, которые транслируют эстетику и экологичность сельского хозяйства: зелёный — трава и деревья, жёлтый — поля и пшеница, голубой — небо.</p>
-            </div>
-          </div>
-        </Chapter>
+        <section className="border-b p-6 py-16 md:p-16 md:py-24">
+          <p className="max-w-5xl font-display text-4xl font-bold leading-tight tracking-tight md:text-6xl">Цветовой код</p>
+          <p className={`${P} mt-8`}>Базовая строгая палитра расширена до четырёх чистых цветов, которые транслируют эстетику и экологичность сельского хозяйства: зелёный — трава и деревья, жёлтый — поля и пшеница, голубой — небо.</p>
+          <Img src={paletteWide.url} alt="Палитра Залесья: природные текстуры и подобранные к ним цвета" className="mt-12 aspect-[1920/645]" />
+        </section>
 
         <Chapter title="Иконки как навигация">
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
