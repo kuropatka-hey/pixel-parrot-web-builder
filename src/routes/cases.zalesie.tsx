@@ -118,8 +118,7 @@ function Zalesie() {
           <div className="grid gap-12 md:grid-cols-2">
             <div className="space-y-4">
               <p className="font-mono text-sm uppercase text-muted-foreground">О КОМПАНИИ </p>
-              <p className={P}>АПХ «Залесье» — один из крупнейших агропромышленных холдингов России. Компания включает пять секторов: животноводство, переработку молока, растениеводство, 
-садоводство и лабораторию .</p>
+              <p className={P}>АПХ «Залесье» — один из крупнейших агропромышленных холдингов России. Компания включает пять секторов: животноводство, переработка молока, растениеводство, садоводство и лаборатория.</p>
             </div>
             <div className="space-y-4">
               <p className="font-mono text-sm uppercase text-muted-foreground">ЗАДАЧА</p>
