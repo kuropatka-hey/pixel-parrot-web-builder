@@ -124,7 +124,7 @@ function Index() {
                   </Link>
                 ) : null}
                 <div className={`flex aspect-[4/3] items-center justify-center overflow-hidden border-b font-mono text-sm ${accent ? "border-primary-foreground/60 bg-primary-foreground/10 text-primary-foreground/70" : "bg-placeholder text-muted-foreground"}`}>
-                  {"img" in c && c.img ? <img src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
+                  {"img" in c && c.img ? <EditableImage src={c.img} alt={c.n} className="h-full w-full object-cover" /> : "IMG / 1600×1200"}
                 </div>
                 <div className="relative z-10 p-8 md:p-16">
                   <h3 className="text-2xl font-bold">{c.n}</h3>
