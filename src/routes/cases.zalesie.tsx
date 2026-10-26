@@ -204,20 +204,14 @@ function Zalesie() {
 
         <Chapter title="Адаптация и масштабируемость">
           <p className={`${P} max-w-4xl`}>Модульный формат обеспечил гибкость графики: паттерны в сборе ложатся на корпоративные блокноты, шопперы, мерч и объёмные выставочные фотозоны.</p>
-          <div className="mt-12 space-y-6">
-            <div className="grid gap-6 md:grid-cols-3">
-              <Img src={set.url} alt="Комплект корпоративных носителей Залесья" className="aspect-[1.28/1] md:col-span-2" />
-              <div className="grid gap-6 md:grid-rows-2">
-                <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
-                <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1] md:aspect-auto md:h-full" />
-              </div>
-            </div>
-            <div className="grid gap-6 md:grid-cols-3">
-              <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="aspect-[1.28/1]" />
-              <Img src={pins.url} alt="Значки с иконками направлений" className="aspect-[1.28/1]" />
-              <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
-            </div>
-            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2/1]" />
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <Img src={set.url} alt="Комплект корпоративных носителей Залесья" className="aspect-[1.28/1] md:col-span-2 md:row-span-2 md:aspect-auto md:h-full" />
+            <Img src={envelope.url} alt="Конверт с паттерном" className="aspect-[1.28/1]" />
+            <Img src={hoodie.url} alt="Худи с иллюстрацией" className="aspect-[1.28/1]" />
+            <Img src={notebooks.url} alt="Корпоративные блокноты и закладки" className="aspect-[1.28/1]" />
+            <Img src={pins.url} alt="Значки с иконками направлений" className="aspect-[1.28/1]" />
+            <Img src={bags.url} alt="Пакеты светлый и тёмный" className="aspect-[1.28/1]" />
+            <Img src={expo.url} alt="Выставочная фотозона из модулей" className="aspect-[2/1] md:col-span-3" />
           </div>
         </Chapter>
 
